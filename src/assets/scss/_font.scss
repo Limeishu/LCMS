@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexming.css');
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexkai.css'); 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+ul,
+li,
+span {
+  line-height: 24px;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  letter-spacing: 2px;
+}
+
+.kai {
+  font-family: 'cwTeXKai', serif; 
+}
+
+.ming {
+  font-family: 'cwTeXMing', serif; 
+}
+
+.uppercase {
+  text-transform: uppercase;
+  &.soli{
+    &::first-letter {
+      font-size: 110%;
+      // font-family: sans-serif;
+      font-weight: 400;
+    }
+  }
+}
