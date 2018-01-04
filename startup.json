@@ -1,0 +1,7 @@
+{
+  "apps": [{
+    "name": "LCMS",
+    "script": "./server/index.js",
+    "watch": true
+  }]
+}
