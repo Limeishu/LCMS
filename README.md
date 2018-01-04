@@ -2,7 +2,9 @@
 
 > A open source content management system based on `Vue.js`.
 
-## Build Setup
+## How to
+
+Copy `server/config.sample.json` to `server/config.json` and modify it as you need.
 
 ``` bash
 # install dependencies
