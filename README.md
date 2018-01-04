@@ -1,4 +1,4 @@
-# 李梅樹網站管理系統 Limeishu Content Management System
+# 李梅樹網站管理系統 Li Mei-Shu Content Management System
 
 > A open source content management system based on `Vue.js`.
 
