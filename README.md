@@ -1,6 +1,6 @@
-# LCMS
+# 李梅樹網站管理系統 Limeishu Content Management System
 
-> Limeishu.org content manager system.
+> A open source content management system based on `Vue.js`.
 
 ## Build Setup
 
