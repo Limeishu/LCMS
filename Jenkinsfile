@@ -28,6 +28,7 @@ node {
           unzip -o package.zip; \
           ls -lah; \
           npm install; \
+					npm run build; \
           pm2 restart startup.json; \
           rm package.zip; \
           ls -lah; \
