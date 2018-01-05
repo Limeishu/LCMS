@@ -7,10 +7,41 @@ const state = {
       name: 'Home',
       path: '/',
       meta: {
-        label: ['首頁'],
-        link: 'Home.vue'
+        label: ['主頁面'],
+        link: 'Home.vue',
+        icon: ['fas', 'home']
       },
       components: lazyLoader('Home')
+    },
+    {
+      name: 'Control Panel',
+      path: '/panel',
+      meta: {
+        label: ['控制面板'],
+        link: 'Panel.vue',
+        icon: ['fas', 'columns']
+      },
+      components: lazyLoader('Panel')
+    },
+    {
+      name: 'Post',
+      path: '/post',
+      meta: {
+        label: ['文章管理'],
+        link: 'Post.vue',
+        icon: ['fas', 'file']
+      },
+      components: lazyLoader('Post')
+    },
+    {
+      name: 'News',
+      path: '/news',
+      meta: {
+        label: ['新聞管理'],
+        link: 'News.vue',
+        icon: ['fas', 'newspaper']
+      },
+      components: lazyLoader('Post')
     }
   ]
 }
