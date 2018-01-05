@@ -1,5 +1,7 @@
 # 李梅樹網站管理系統 Li Mei-Shu Content Management System
 
+![Build Status](https://jenkins.limeishu.org.tw/job/LCMS/job/master/badge/icon)
+
 > A open source content management system based on `Vue.js`.
 
 ## How to
