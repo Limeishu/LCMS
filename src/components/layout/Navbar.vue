@@ -1,27 +1,20 @@
 <template>
-  <div id="nav" class="menu">
-    <ul>
-      <li v-for="(item, i) in menu">
-        <router-link :to="item.path" v-if="item.path">
-          <span class="uppercase">{{ item.meta.label[0] || item.name }}</span>
-        </router-link>
-        <ul v-if="item.children">
-          <li v-for="item in item.children">
-            <router-link :to="item.path" v-if="item.path">
-              <span class="uppercase">{{ item.meta.label[0] || item.name }}</span>
-            </router-link>
-          </li>
-        </ul>
-      </li>
-    </ul>
+  <div class="navbar">
+    <h1 class="logo">李梅樹網站管理系統<div class="version">v{{ version }}</div></h1>
+    <div class="user"><p>{{ user.name }}</p><p>登出</p></div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import config from '../../../package.json'
 export default {
-  computed: {
-    ...mapGetters({ menu: 'menuitems' })
+  data () {
+    return {
+      version: config.version,
+      user: {
+        name: 'Limeishu'
+      }
+    }
   }
 }
 </script>
