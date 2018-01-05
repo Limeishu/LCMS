@@ -1,0 +1,36 @@
+.navbar {
+  width: calc(100% - 2rem);
+  height: 4rem;
+  position: fixed;
+  color: $white;
+  background-color: $tone;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  h1 {
+    font-size: 24px;
+    &.logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .version {
+        margin-left: 5px;
+        font-size: 12px;
+        background-color: $white;
+        color: $tone;
+        padding: 5px;
+        border-radius: 1rem;
+        line-height: 12px;
+      }
+    }
+  }
+  .user {
+    display: flex;
+    flex-direction: row;
+    p {
+      padding-left: 1rem;
+    }
+  }
+}

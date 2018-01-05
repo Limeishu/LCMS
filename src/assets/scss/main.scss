@@ -5,9 +5,8 @@
 
 @import 'header';
 @import 'footer';
-@import 'banner';
-@import 'spotlight';
-@import 'slider';
+@import 'navbar';
+@import 'sidebar';
 @import 'plugin';
 
 @import 'home';
@@ -22,4 +21,10 @@
   position: relative;
   flex-direction: column;
   overflow: hidden;
+  .main {
+    position: relative;
+    margin-top: 4rem;
+    height: calc(100% - 4rem);
+    width: 100%;
+  }
 }
