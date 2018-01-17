@@ -2,8 +2,8 @@
   <div id="app">
     <Navbar></Navbar>
     <div class="main">
-      <Sidebar></Sidebar>
-      <mainFooter></mainFooter>
+      <Sidebar class="side"></Sidebar>
+      <mainFooter class="side"></mainFooter>
       <router-view></router-view>
     </div>
   </div>

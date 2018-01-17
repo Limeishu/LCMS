@@ -24,7 +24,10 @@
   .main {
     position: relative;
     margin-top: 4rem;
-    height: calc(100% - 4rem);
-    width: 100%;
+    min-height: calc(100vh - 4rem);
+    width: calc(100% - 10rem);
+    >div:not(.side) {
+      margin-left: 10rem;
+    }
   }
 }
