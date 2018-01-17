@@ -1,20 +1,25 @@
 <template>
   <div class="navbar">
     <h1 class="logo">李梅樹網站管理系統<div class="version">v{{ version }}</div></h1>
-    <div class="user"><p>{{ user.name }}</p><p>登出</p></div>
+    <div class="user" v-if="isLogin"><p>{{ user.username }}</p><p @click="logout(), $router.push('/login')">登出</p></div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 import config from '../../../package.json'
 export default {
   data () {
     return {
-      version: config.version,
-      user: {
-        name: 'Limeishu'
-      }
+      version: config.version
     }
+  },
+  computed: {
+    ...mapGetters(['isLogin']),
+    ...mapGetters({ user: 'userInfo' })
+  },
+  methods: {
+    ...mapActions({ logout: 'userLogout' })
   }
 }
 </script>
