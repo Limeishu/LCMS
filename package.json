@@ -19,6 +19,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.2",
     "@fortawesome/vue-fontawesome": "^0.0.22",
     "axios": "^0.17.1",
+    "js-md5": "^0.7.3",
     "koa": "^2.4.1",
     "koa-static": "^4.0.2",
     "node-sass": "^4.7.2",
