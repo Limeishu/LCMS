@@ -31,12 +31,15 @@
     },
     methods: {
       checkLogin () {
-        this.isLogin ? null : this.$router.push('/login')
+        if (!this.isLogin) this.$router.push('/login')
       }
     },
     watch: {
       $route (route) {
         this.checkLogin()
+      },
+      isLogin () {
+        this.$router.push('/')
       }
     }
   }
