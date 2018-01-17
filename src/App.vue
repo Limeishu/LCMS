@@ -10,17 +10,17 @@
 </template>
 
 <style lang="scss">
-@import './assets/scss/main.scss'
+@import './assets/scss/main.scss';
 </style>
 
 
 <script>
-import { Navbar, mainFooter, Sidebar } from '@/components/layout'
-export default {
-  components: {
-    Navbar: Navbar,
-    mainFooter: mainFooter,
-    Sidebar: Sidebar
+  import { Navbar, mainFooter, Sidebar } from '@/components/layout'
+  export default {
+    components: {
+      Navbar: Navbar,
+      mainFooter: mainFooter,
+      Sidebar: Sidebar
+    }
   }
-}
 </script>
