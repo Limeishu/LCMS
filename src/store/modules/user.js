@@ -7,7 +7,7 @@ const state = {
 }
 
 const getters = {
-  isLogin: state => state.user._id !== null || state.user._id !== undefined
+  isLogin: state => state.user._id !== null && state.user._id !== undefined
 }
 
 const actions = {
