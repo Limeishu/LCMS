@@ -2,6 +2,7 @@
   <div id="login">
     <input type="text" v-model="user.username">
     <input type="password" v-model="user.password">
+    <div class="button" @click="login()">Login</div>
   </div>
 </template>
 
