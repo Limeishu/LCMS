@@ -10,6 +10,7 @@
 @import 'plugin';
 
 @import 'home';
+@import 'login';
 
 #app {
   overflow-x: hidden;
@@ -25,9 +26,12 @@
     position: relative;
     margin-top: 4rem;
     min-height: calc(100vh - 4rem);
-    width: calc(100% - 10rem);
+    width: 100%;
     >div:not(.side) {
       margin-left: 10rem;
+    }
+    .main-container {
+      min-height: 100vh;
     }
   }
 }
