@@ -7,7 +7,8 @@ const state = {
 }
 
 const getters = {
-  isLogin: state => state.user._id !== null && state.user._id !== undefined
+  isLogin: state => state.user.uid !== null && state.user.uid !== undefined,
+  userInfo: state => state.user
 }
 
 const actions = {
@@ -18,11 +19,18 @@ const actions = {
         password: md5(user.password)
       })
       if (res.data.result !== 0) throw new Error(res.data.err)
-      commit(types.SET_USER, res.data)
+      let userInfo = {
+        uid: res.data.uid,
+        username: user.username
+      }
+      commit(types.SET_USER, userInfo)
       return res.data
     } catch (err) {
       throw err
     }
+  },
+  async userLogout ({ commit }) {
+    commit(types.SET_USER, {})
   }
 }
 
