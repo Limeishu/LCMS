@@ -5,12 +5,12 @@
         <p>{{ msg }}</p>
       </div>
       <div class="input-box">
-        <input type="text" v-model="user.username" :class="{ 'verified': recaptcha }" required>
+        <input type="text" v-model="user.username" :class="{ 'verified': recaptcha }" autocomplete="off" required>
         <span class="bar"></span>
         <label><span>User Name</span></label>
       </div>
       <div class="input-box">
-        <input type="password" v-model="user.password" :class="{ 'verified': recaptcha }" required>
+        <input type="password" v-model="user.password" :class="{ 'verified': recaptcha }" autocomplete="off" required>
         <span class="bar"></span>
         <label><span>Password</span></label>
       </div>
