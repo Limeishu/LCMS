@@ -22,6 +22,7 @@
   position: relative;
   flex-direction: column;
   overflow: hidden;
+  background-color: $light;
   .main {
     position: relative;
     margin-top: 4rem;
@@ -31,7 +32,7 @@
       margin-left: 10rem;
     }
     .main-container {
-      min-height: 100vh;
+      min-height: inherit;
     }
   }
 }
