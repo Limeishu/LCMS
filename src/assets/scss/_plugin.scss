@@ -1,3 +1,109 @@
 .recaptcha {
   display: flex;
 }
+
+.input-box {
+  color: $tone;
+  position: relative;
+  margin: 20px 0;
+  input[type="text"],
+  input[type="password"] {
+    display: flex;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-color: none;
+    width: calc(100% - 15px);
+    border: 0;
+    border-bottom: 1px solid $gray;
+    padding: 10px 10px 10px 5px;
+    font-size: 14pt;
+    font-weight: 600;
+    outline: none;
+    &:valid {
+      ~ label {
+        color: $tone !important;
+      }
+      ~ .bar {
+        &:before, &:after {
+          background: $tone !important;
+        }
+      }
+    }
+    &:required {
+      box-shadow: none;
+      &:invalid.verified {
+        ~ label {
+          top: -20px;
+          font-size: 10pt;
+          color: $red !important;
+        }
+        ~ .bar {
+          &:before, &:after {
+            width: 50%;
+            background: $red;
+          }
+        }
+      }
+    }
+    &:focus,
+    &:valid {
+      ~ label {
+        top: -20px;
+        font-size: 10pt;
+        color: inherit;
+      }
+      ~ .bar {
+        &:before, &:after {
+          width: 50%;
+        }
+      }
+    }
+  }
+  .bar {
+    position: absolute;
+    display: block;
+    width: 100%;
+    &:before,
+    &:after {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0;
+      position: absolute;
+      background: $tone;
+      transition: all ease .2s;
+    }
+    &:before {
+      left: 50%;
+    }
+    &:after {
+      right: 50%;
+    }
+  }
+  label {
+    font-size: 14pt;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: all ease .2s;
+    color: $gray;
+  }
+}
+
+.button {
+  background: inherit;
+  color: $white;
+  margin: 1rem 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 3pt;
+  box-shadow: 1pt 1pt 2pt rgba($black, .5);
+  text-transform: uppercase;
+  transition: all .3s;
+  &:hover {
+    box-shadow: 2pt 2pt 4pt rgba($black, .5);
+  }
+}
