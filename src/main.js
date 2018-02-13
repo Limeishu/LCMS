@@ -4,6 +4,7 @@ import VueAxios     from 'vue-axios'
 import { sync }     from 'vuex-router-sync'
 import vueScrollTo  from 'vue-scroll-to'
 import VueCookie    from 'vue-cookie'
+import { VueEditor } from 'vue2-editor'
 
 import App          from './App'
 import router       from './router'
@@ -41,6 +42,7 @@ import {
 
 FontAwesome.library.add(faAngleLeft, faAngleRight, faUser, faCircle, faCircleNotch, faHome, faCaretDown, faHeart, faCartPlus, faPlus, faMinus, faCreditCard, faTruck, faEnvelope, faKey, faTimes, faCheckCircle, faExclamationCircle, faCheck, faGift, faShareAlt, faColumns, faFile, faNewspaper)
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)
+Vue.component('VueEditor', VueEditor)
 
 Vue.router = router
 Vue.use(VueAxios, axios)

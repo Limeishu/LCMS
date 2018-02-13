@@ -8,6 +8,7 @@ import mutations    from './mutation-types'
 import app          from './modules/app'
 import user         from './modules/user'
 import menu         from './modules/menu'
+import upload       from './modules/upload'
 
 Vue.use(Vuex)
 
@@ -16,7 +17,8 @@ const store = new Vuex.Store({
   modules: {
     app,
     user,
-    menu
+    menu,
+    upload
   },
   state: {
     toggle: false
