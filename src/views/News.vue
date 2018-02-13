@@ -1,5 +1,5 @@
 <template>
-  <div class="editor-container">
+  <div class="editor-container paragraph">
     <div class="input-box">
       <input type="text" v-model="news.title" autocomplete="off" required>
       <span class="bar"></span>

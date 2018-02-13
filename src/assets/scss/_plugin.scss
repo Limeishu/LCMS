@@ -109,8 +109,9 @@
 }
 
 .editor-container {
+  width: 800px;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem auto !important;
   background-color: $white;
   border-radius: 2pt;
   .img-list {
@@ -142,5 +143,57 @@
   }
   .button {
     background-color: $tone;
+  }
+}
+
+
+.paragraph {
+  img {
+    width: 720px;
+  }
+  h1 {
+    margin: 3rem 0 1rem 0;
+    font-weight: 500;
+  }
+  p, ul {
+    margin: 1rem 0 !important;
+    line-height: 1.6;
+    font-size: 12pt;
+    color: $content;
+  }
+  p {
+    text-indent: 25pt;
+    >a {
+      margin: 0;
+    }
+  }
+  ul {
+    background-color: $light;
+    padding: 1rem !important;
+    border-radius: 2pt;
+    li {
+      text-indent: 0;
+      list-style: disc;
+      margin: 0 0 1rem 1rem;
+      line-height: 1.6;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  h2 {
+    position: relative;
+    padding-left: 2rem !important;
+    margin: 2rem 0 1rem 0 !important;
+    font-weight: 500;
+    &:before {
+      pointer-events: none;
+      transform: translateX(-2rem);
+      color: $tone;
+      content: "#";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
