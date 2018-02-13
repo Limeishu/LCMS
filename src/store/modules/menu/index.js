@@ -41,7 +41,7 @@ const state = {
         link: 'News.vue',
         icon: ['fas', 'newspaper']
       },
-      components: lazyLoader('Post')
+      components: lazyLoader('News')
     }
   ]
 }
