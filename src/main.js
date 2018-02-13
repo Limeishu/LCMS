@@ -35,10 +35,11 @@ import {
          faShareAlt,
          faColumns,
          faFile,
-         faNewspaper
+         faNewspaper,
+         faUser
        }            from '@fortawesome/fontawesome-free-solid'
 
-FontAwesome.library.add(faAngleLeft, faAngleRight, faCircle, faCircleNotch, faHome, faCaretDown, faHeart, faCartPlus, faPlus, faMinus, faCreditCard, faTruck, faEnvelope, faKey, faTimes, faCheckCircle, faExclamationCircle, faCheck, faGift, faShareAlt, faColumns, faFile, faNewspaper)
+FontAwesome.library.add(faAngleLeft, faAngleRight, faUser, faCircle, faCircleNotch, faHome, faCaretDown, faHeart, faCartPlus, faPlus, faMinus, faCreditCard, faTruck, faEnvelope, faKey, faTimes, faCheckCircle, faExclamationCircle, faCheck, faGift, faShareAlt, faColumns, faFile, faNewspaper)
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)
 
 Vue.router = router
