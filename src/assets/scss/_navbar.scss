@@ -31,6 +31,9 @@
     flex-direction: row;
     p {
       padding-left: 1rem;
+      span {
+        margin-left: 5px;
+      }
     }
   }
 }
