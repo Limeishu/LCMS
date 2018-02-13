@@ -21,7 +21,9 @@ const actions = {
       if (res.data.result !== 0) throw new Error(res.data.err)
       let userInfo = {
         uid: res.data.uid,
-        username: user.username
+        username: user.username,
+        permission: res.data.permission,
+        meta: res.data.meta
       }
       commit(types.SET_USER, userInfo)
       return res.data
