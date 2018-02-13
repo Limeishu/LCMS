@@ -2,7 +2,7 @@
   <div class="sidebar">
     <ul>
       <li v-for="(item, i) in menu" :key="i">
-        <router-link :to="item.path" v-if="item.path">
+        <router-link :to="item.path" v-if="item.path" :class="{ 'active': $route.path === item.path }">
           <font-awesome-icon v-if="item.meta.icon" :icon="item.meta.icon" />
           <span class="uppercase">{{ item.meta.label[0] || item.name }}</span>
         </router-link>
