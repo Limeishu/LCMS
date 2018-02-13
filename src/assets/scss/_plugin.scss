@@ -107,3 +107,40 @@
     box-shadow: 2pt 2pt 4pt rgba($black, .5);
   }
 }
+
+.editor-container {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: $white;
+  border-radius: 2pt;
+  .img-list {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 1rem 0;
+    .image {
+      height: 5rem;
+      width: 5rem;
+      margin-right: 1rem;
+      border-radius: 2pt;
+      background-position: center;
+      background-size: cover;
+      box-sizing: border-box;
+      &.active {
+        border: 2pt solid $tone;
+      }
+    }
+  }
+  >span {
+    font-size: 10pt;
+    margin: 2rem 0 1rem 0;
+    &.active {
+      color: $tone;
+    }
+  }
+  .button {
+    background-color: $tone;
+  }
+}

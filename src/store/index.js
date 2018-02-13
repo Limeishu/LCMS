@@ -9,6 +9,7 @@ import app          from './modules/app'
 import user         from './modules/user'
 import menu         from './modules/menu'
 import upload       from './modules/upload'
+import news         from './modules/news'
 
 Vue.use(Vuex)
 
@@ -18,7 +19,8 @@ const store = new Vuex.Store({
     app,
     user,
     menu,
-    upload
+    upload,
+    news
   },
   state: {
     toggle: false

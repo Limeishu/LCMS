@@ -6,6 +6,10 @@ export const EXPAND_MENU    = 'EXPAND_MENU'
 
 export const SET_USER       = 'SET_USER'
 
+export const NEWS           = 'NEWS'
+
+export const POST           = 'POST'
+
 export default {
   UPDATE_TYPE: (state, type) => {
     state.type = type
