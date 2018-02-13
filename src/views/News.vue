@@ -48,7 +48,8 @@
       },
       async send () {
         this.news.content = document.querySelector('.ql-editor').innerText
-        this.sendNews(this.news)
+        let res = await this.sendNews(this.news)
+        window.open(`https://limeishu.org.tw/culture/news/${res.nid}`)
       }
     }
   }
