@@ -14,7 +14,7 @@
       useCustomImageHandler
       @imageAdded="handleImageAdded"
       v-model="news.paragraph"></vue-editor>
-      <div class="button" @click="send()"><span>送出</span></div>
+      <div class="button" @click="update()"><span>送出</span></div>
   </div>
 </template>
 
@@ -38,7 +38,7 @@
       this.getNews()
     },
     methods: {
-      ...mapActions(['uploadFile', 'sendNews', 'getNewsByID']),
+      ...mapActions(['uploadFile', 'updateNews', 'getNewsByID']),
       async getNews () {
         const res = await this.getNewsByID(this.$route.params.nid)
         this.news = res.data
@@ -54,9 +54,9 @@
         }, 1000)
         resetUploader()
       },
-      async send () {
+      async update () {
         this.news.content = document.querySelector('.ql-editor').innerText
-        let res = await this.sendNews(this.news)
+        let res = await this.updateNews({news: this.news, nid: this.$route.params.nid})
         window.open(`https://limeishu.org.tw/culture/news/${res.nid}`)
       }
     }
