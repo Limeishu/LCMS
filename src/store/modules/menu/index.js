@@ -27,21 +27,41 @@ const state = {
       name: 'Post',
       path: '/post',
       meta: {
-        label: ['文章管理'],
+        label: ['新增文章'],
         link: 'Post.vue',
         icon: ['fas', 'file']
       },
-      components: lazyLoader('Post')
+      components: lazyLoader('Post/Add')
+    },
+    {
+      name: 'Post List',
+      path: '/post-list',
+      meta: {
+        label: ['文章列表'],
+        link: 'Post.vue',
+        icon: ['fas', 'list-alt']
+      },
+      components: lazyLoader('Post/List')
     },
     {
       name: 'News',
       path: '/news',
       meta: {
-        label: ['新聞管理'],
+        label: ['新增新聞'],
+        link: 'News.vue',
+        icon: ['fas', 'plus']
+      },
+      components: lazyLoader('News/Add')
+    },
+    {
+      name: 'News List',
+      path: '/news-list',
+      meta: {
+        label: ['新聞列表'],
         link: 'News.vue',
         icon: ['fas', 'newspaper']
       },
-      components: lazyLoader('News')
+      components: lazyLoader('News/List')
     }
   ]
 }
