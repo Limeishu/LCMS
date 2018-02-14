@@ -10,6 +10,16 @@ const router =  new Router({
   routes: [
     ...generateRoutesFromMenu(menuModule.state.items),
     {
+      name: 'News Edit',
+      path: '/news/edit/:nid',
+      components: lazyLoader('News/Edit')
+    },
+    {
+      name: 'Post Edit',
+      path: '/post/edit/:nid',
+      components: lazyLoader('Post/Edit')
+    },
+    {
       name: 'Login',
       path: '/login',
       components: lazyLoader('Login')
