@@ -29,7 +29,8 @@
     min-height: calc(100vh - 4rem);
     width: 100%;
     >div:not(.side) {
-      margin-left: 10rem;
+      margin-left: 12rem;
+      margin-right: 4rem;
     }
     .main-container {
       min-height: inherit;
