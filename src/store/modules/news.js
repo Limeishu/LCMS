@@ -41,6 +41,15 @@ const actions = {
     } catch (err) {
       throw err
     }
+  },
+
+  async deleteNews ({ commit }, nid) {
+    try {
+      const res = await axios.delete(`https://api.limeishu.org.tw/news/${nid}`)
+      return res.data.result === 0
+    } catch (err) {
+      throw err
+    }
   }
 
 }
