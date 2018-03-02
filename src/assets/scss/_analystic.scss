@@ -1,0 +1,65 @@
+.analystic {
+  padding: 2rem;
+  position: relative;
+  width: calc(100% - 18rem);
+  >h1 {
+    padding: 2rem 0 1rem 0;
+    border-bottom: 1px solid $gray;
+  }
+  .head {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between;
+    .block {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      >span {
+        color: $gray;
+        margin-bottom: 10pt;
+        font-size: 10pt;
+      }
+      .fa-arrow-down {
+        color: $red;
+      }
+      .fa-arrow-up {
+        color: $green;
+      }
+      h1 {
+        span {
+          font-size: 10pt;
+        }
+      }
+    }
+  }
+  .list-container {
+    width: 100%;
+    .head {
+      width: auto;
+      span {
+        margin: 3pt;
+        cursor: pointer;
+        &.icon {
+          color: $tone;
+        }
+      }
+      .active>span.icon {
+        color: $white;
+      }
+    }
+    .list {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      p {
+        width: 8rem;
+        text-align: right;
+        &.title {
+          width: 40%;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
