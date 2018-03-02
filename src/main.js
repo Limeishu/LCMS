@@ -5,10 +5,12 @@ import { sync }     from 'vuex-router-sync'
 import vueScrollTo  from 'vue-scroll-to'
 import VueCookie    from 'vue-cookie'
 import { VueEditor } from 'vue2-editor'
+import VueGAPI      from 'vue-gapi'
 
 import App          from './App'
 import router       from './router'
 import store        from './store'
+import config       from '../server/config.json'
 
 import FontAwesomeIcon                from '@fortawesome/vue-fontawesome'
 import FontAwesome                    from '@fortawesome/fontawesome'
@@ -41,10 +43,12 @@ import {
          faListAlt,
          faEdit,
          faEye,
-         faMinusCircle
+         faMinusCircle,
+         faArrowUp,
+         faArrowDown
        }            from '@fortawesome/fontawesome-free-solid'
 
-FontAwesome.library.add(faAngleLeft, faAngleRight, faUser, faCircle, faCircleNotch, faListAlt, faMinusCircle, faEye, faHome, faCaretDown, faEdit, faHeart, faCartPlus, faPlus, faMinus, faCreditCard, faTruck, faEnvelope, faKey, faTimes, faCheckCircle, faExclamationCircle, faCheck, faGift, faShareAlt, faColumns, faFile, faNewspaper)
+FontAwesome.library.add(faAngleLeft, faAngleRight, faUser, faCircle, faCircleNotch, faArrowUp, faArrowDown, faListAlt, faMinusCircle, faEye, faHome, faCaretDown, faEdit, faHeart, faCartPlus, faPlus, faMinus, faCreditCard, faTruck, faEnvelope, faKey, faTimes, faCheckCircle, faExclamationCircle, faCheck, faGift, faShareAlt, faColumns, faFile, faNewspaper)
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)
 Vue.component('VueEditor', VueEditor)
 
@@ -54,6 +58,13 @@ Vue.use(VueAxios, axios)
 Vue.use(vueScrollTo)
 
 Vue.use(VueCookie)
+
+Vue.use(VueGAPI, {
+  apiKey: config.gapi.key,
+  clientId: config.gapi.client_id,
+  discoveryDocs: ['https://analyticsreporting.googleapis.com/$discovery/rest?version=v4'],
+  scope: config.gapi.uri
+})
 
 // Enable devtools
 Vue.config.devtools = true
