@@ -55,11 +55,13 @@
     <div class="list-container">
       <div class="list head">
         <p class="title">頁面標題</p>
-        <p v-for="(item, i) in option" :key="i" @click="selected = i" :class="{ 'active': selected === i }"><span class="icon"><font-awesome-icon icon="angle-down"/></span><span>{{ item }}</span></p>
+        <p v-for="i in 4" :key="i" @click="selected = i" :class="{ 'active': selected === i }"><span class="icon"><font-awesome-icon icon="angle-down"/></span><span>{{ option[i-1] }}</span></p>
+        <p>平均停留時間</p>
       </div>
       <div class="list" v-for="(item, i) in sortData(analysisData.rows, selected)" :key="i">
         <p class="title">{{ item.dimensions[0] }}</p>
-        <p v-for="(value, j) in item.metrics[0].values" :key="j">{{ value }}</p>
+        <p v-for="j in 4" :key="j">{{ item.metrics[0].values[j-1] }}</p>
+        <p>{{ (item.metrics[0].values[4] / item.metrics[0].values[3] / 60).toFixed(0) }}</p>
       </div>
     </div>
   </div>
@@ -70,7 +72,7 @@ export default {
   data () {
     return {
       analysisData: '',
-      selected: 0,
+      selected: 1,
       option: [
         '瀏覽量',
         '訪客',
