@@ -55,10 +55,10 @@
     <div class="list-container">
       <div class="list head">
         <p class="title">頁面標題</p>
-        <p v-for="i in 4" :key="i" @click="selected = i" :class="{ 'active': selected === i }"><span class="icon"><font-awesome-icon icon="angle-down"/></span><span>{{ option[i-1] }}</span></p>
+        <p v-for="i in 4" :key="i" @click="selected = i, sortData(i-1)" :class="{ 'active': selected === i }"><span class="icon"><font-awesome-icon icon="angle-down"/></span><span>{{ option[i-1] }}</span></p>
         <p>平均停留時間</p>
       </div>
-      <div class="list" v-for="(item, i) in sortData(analysisData.rows, selected)" :key="i">
+      <div class="list" v-for="(item, i) in analysisData.rows" :key="i">
         <p class="title">{{ item.dimensions[0] }}</p>
         <p v-for="j in 4" :key="j">{{ item.metrics[0].values[j-1] }}</p>
         <p>{{ (item.metrics[0].values[4] / item.metrics[0].values[3] / 60).toFixed(0) }}</p>
@@ -122,9 +122,10 @@ export default {
         }
       })
       this.analysisData = await JSON.parse(res.body).reports[0].data
+      this.sortData(this.selected)
     },
-    sortData (data, i) {
-      return data.sort((a, b) => { return a.metrics[0].values[i] - b.metrics[0].values[i] }).reverse()
+    sortData (i) {
+      this.analysisData.rows.sort((a, b) => { return a.metrics[0].values[i] - b.metrics[0].values[i] }).reverse()
     }
   }
 }
