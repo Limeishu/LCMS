@@ -3,7 +3,7 @@
     <Loader v-if="!analysisData" />
     <div class="analystic" v-if="analysisData">
       <div class="date-tag">
-        <span>{{ new Date((new Date() - 7 * 60 * 60 * 24 * 1000)).toLocaleDateString() }}</span> ~
+        <span>{{ new Date((new Date() - 7 * 60 * 60 * 24 * 1000)).toLocaleDateString() }}</span> <font-awesome-icon icon="angle-right" />
         <span>{{ new Date().toLocaleDateString() }}</span>
       </div>
       <h1>總覽</h1>
@@ -15,7 +15,7 @@
           </h1>
           <p>
             <font-awesome-icon :icon="['fas', analysisData.totals[0].values[i-1] > analysisData.totals[1].values[i-1] ? 'arrow-up' : 'arrow-down']"
-            /> {{ Math.abs(analysisData.totals[1].values[i-1] - analysisData.totals[0].values[i-1]) }}
+            /> <span>{{ Math.abs(analysisData.totals[1].values[i-1] - analysisData.totals[0].values[i-1]) }}</span>
           </p>
         </div>
         <div class="block">
@@ -25,8 +25,8 @@
           </h1>
           <p>
             <font-awesome-icon :icon="['fas', analysisData.totals[0].values[4] / analysisData.totals[0].values[3] > analysisData.totals[1].values[4] / analysisData.totals[1].values[3] ? 'arrow-up' : 'arrow-down']"
-            /> {{ Math.abs((analysisData.totals[0].values[4] / analysisData.totals[0].values[3] - analysisData.totals[1].values[4]
-            / analysisData.totals[1].values[3]) / 60).toFixed(1) }}
+            /> <span>{{ Math.abs((analysisData.totals[0].values[4] / analysisData.totals[0].values[3] - analysisData.totals[1].values[4]
+            / analysisData.totals[1].values[3]) / 60).toFixed(1) }}</span>
           </p>
         </div>
       </div>

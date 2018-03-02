@@ -2,6 +2,11 @@
   padding: 2rem;
   position: relative;
   width: calc(100% - 4rem);
+  .date-tag {
+    svg {
+      margin: 0 1rem;
+    }
+  }
   >h1 {
     padding: 2rem 0 1rem 0;
     border-bottom: 1px solid $gray;
@@ -20,10 +25,10 @@
         margin-bottom: 10pt;
         font-size: 10pt;
       }
-      .fa-arrow-down {
+      .fa-arrow-down, .fa-arrow-down + span {
         color: $red;
       }
-      .fa-arrow-up {
+      .fa-arrow-up, .fa-arrow-up + span {
         color: $green;
       }
       h1 {
