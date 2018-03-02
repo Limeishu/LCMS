@@ -91,7 +91,7 @@ export default {
   data () {
     return {
       analysisData: '',
-      selected: 1,
+      selected: 0,
       option: [
         '瀏覽量',
         '訪客',
@@ -141,7 +141,6 @@ export default {
         }
       })
       this.analysisData = await JSON.parse(res.body).reports[0].data
-      this.sortData(this.selected)
     },
     sortData (i) {
       this.analysisData.rows.sort((a, b) => { return a.metrics[0].values[i] - b.metrics[0].values[i] }).reverse()
