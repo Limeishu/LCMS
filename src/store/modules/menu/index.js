@@ -13,16 +13,16 @@ const state = {
       },
       components: lazyLoader('Home')
     },
-    {
-      name: 'Control Panel',
-      path: '/panel',
-      meta: {
-        label: ['控制面板'],
-        link: 'Panel.vue',
-        icon: ['fas', 'columns']
-      },
-      components: lazyLoader('Panel')
-    },
+    // {
+    //   name: 'Control Panel',
+    //   path: '/panel',
+    //   meta: {
+    //     label: ['控制面板'],
+    //     link: 'Panel.vue',
+    //     icon: ['fas', 'columns']
+    //   },
+    //   components: lazyLoader('Panel')
+    // },
     {
       name: 'Post',
       path: '/post',
