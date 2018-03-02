@@ -8,44 +8,14 @@
       </div>
       <h1>總覽</h1>
       <div class="head">
-        <div class="block">
-          <span>瀏覽量</span>
-          <h1>{{ analysisData.totals[0].values[0] }}
-            <span>次</span>
+        <div class="block" v-for="i in 4" :key="i">
+          <span>{{ option[i-1][0] }}</span>
+          <h1>{{ analysisData.totals[0].values[i-1] }}
+            <span>{{ option[i-1][1] }}</span>
           </h1>
           <p>
-            <font-awesome-icon :icon="['fas', analysisData.totals[0].values[0] > analysisData.totals[1].values[0] ? 'arrow-up' : 'arrow-down']"
-            /> {{ Math.abs(analysisData.totals[1].values[0] - analysisData.totals[0].values[0]) }}
-          </p>
-        </div>
-        <div class="block">
-          <span>訪客</span>
-          <h1>{{ analysisData.totals[0].values[1] }}
-            <span>人</span>
-          </h1>
-          <p>
-            <font-awesome-icon :icon="['fas', analysisData.totals[0].values[1] > analysisData.totals[1].values[1] ? 'arrow-up' : 'arrow-down']"
-            /> {{ Math.abs(analysisData.totals[1].values[1] - analysisData.totals[0].values[1]) }}
-          </p>
-        </div>
-        <div class="block">
-          <span>新訪客</span>
-          <h1>{{ analysisData.totals[0].values[2] }}
-            <span>人</span>
-          </h1>
-          <p>
-            <font-awesome-icon :icon="['fas', analysisData.totals[0].values[2] > analysisData.totals[1].values[2] ? 'arrow-up' : 'arrow-down']"
-            /> {{ Math.abs(analysisData.totals[1].values[2] - analysisData.totals[0].values[2]) }}
-          </p>
-        </div>
-        <div class="block">
-          <span>工作階段</span>
-          <h1>{{ analysisData.totals[0].values[3] }}
-            <span>個</span>
-          </h1>
-          <p>
-            <font-awesome-icon :icon="['fas', analysisData.totals[0].values[3] > analysisData.totals[1].values[3] ? 'arrow-up' : 'arrow-down']"
-            /> {{ Math.abs(analysisData.totals[1].values[3] - analysisData.totals[0].values[3]) }}
+            <font-awesome-icon :icon="['fas', analysisData.totals[0].values[i-1] > analysisData.totals[1].values[i-1] ? 'arrow-up' : 'arrow-down']"
+            /> {{ Math.abs(analysisData.totals[1].values[i-1] - analysisData.totals[0].values[i-1]) }}
           </p>
         </div>
         <div class="block">
@@ -68,7 +38,7 @@
             <span class="icon">
               <font-awesome-icon icon="angle-down" />
             </span>
-            <span>{{ option[i-1] }}</span>
+            <span>{{ option[i-1][0] }}</span>
           </p>
           <p>平均停留時間</p>
         </div>
@@ -93,11 +63,10 @@ export default {
       analysisData: '',
       selected: 0,
       option: [
-        '瀏覽量',
-        '訪客',
-        '新訪客',
-        '工作階段',
-        '平均停留時間'
+        ['瀏覽量', '次'],
+        ['訪客', '人'],
+        ['新訪客', '人'],
+        ['工作階段', '個']
       ]
     }
   },
