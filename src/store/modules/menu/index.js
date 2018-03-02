@@ -23,26 +23,26 @@ const state = {
     //   },
     //   components: lazyLoader('Panel')
     // },
-    {
-      name: 'Post',
-      path: '/post',
-      meta: {
-        label: ['新增文章'],
-        link: 'Post.vue',
-        icon: ['fas', 'file']
-      },
-      components: lazyLoader('Post/Add')
-    },
-    {
-      name: 'Post List',
-      path: '/post-list',
-      meta: {
-        label: ['文章列表'],
-        link: 'Post.vue',
-        icon: ['fas', 'list-alt']
-      },
-      components: lazyLoader('Post/List')
-    },
+    // {
+    //   name: 'Post',
+    //   path: '/post',
+    //   meta: {
+    //     label: ['新增文章'],
+    //     link: 'Post.vue',
+    //     icon: ['fas', 'file']
+    //   },
+    //   components: lazyLoader('Post/Add')
+    // },
+    // {
+    //   name: 'Post List',
+    //   path: '/post-list',
+    //   meta: {
+    //     label: ['文章列表'],
+    //     link: 'Post.vue',
+    //     icon: ['fas', 'list-alt']
+    //   },
+    //   components: lazyLoader('Post/List')
+    // },
     {
       name: 'News',
       path: '/news',
