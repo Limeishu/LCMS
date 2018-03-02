@@ -9,6 +9,7 @@ node {
 	stage('Build'){
 		echo 'Cleaning old files.'
     sh "rm -rf .git"
+		sh "cp -f /home/limeishu/jenkins/LCMS/config.json ./server/"
 		sh "ls -lah"
 		sh "yarn"
 		sh "yarn run build"
