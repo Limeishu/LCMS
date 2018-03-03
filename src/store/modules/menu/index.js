@@ -13,6 +13,16 @@ const state = {
       },
       components: lazyLoader('Home')
     },
+    {
+      name: 'Server Status',
+      path: '/status',
+      meta: {
+        label: ['伺服器'],
+        link: 'Server.vue',
+        icon: ['fas', 'server']
+      },
+      components: lazyLoader('Server')
+    },
     // {
     //   name: 'Control Panel',
     //   path: '/panel',

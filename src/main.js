@@ -45,10 +45,11 @@ import {
          faEye,
          faMinusCircle,
          faArrowUp,
-         faArrowDown
+         faArrowDown,
+         faServer
        }            from '@fortawesome/fontawesome-free-solid'
 
-FontAwesome.library.add(faAngleLeft, faAngleRight, faUser, faCircle, faCircleNotch, faArrowUp, faArrowDown, faListAlt, faMinusCircle, faEye, faHome, faCaretDown, faEdit, faHeart, faCartPlus, faPlus, faMinus, faCreditCard, faTruck, faEnvelope, faKey, faTimes, faCheckCircle, faExclamationCircle, faCheck, faGift, faShareAlt, faColumns, faFile, faNewspaper)
+FontAwesome.library.add(faAngleLeft, faAngleRight, faUser, faCircle, faServer, faCircleNotch, faArrowUp, faArrowDown, faListAlt, faMinusCircle, faEye, faHome, faCaretDown, faEdit, faHeart, faCartPlus, faPlus, faMinus, faCreditCard, faTruck, faEnvelope, faKey, faTimes, faCheckCircle, faExclamationCircle, faCheck, faGift, faShareAlt, faColumns, faFile, faNewspaper)
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)
 Vue.component('VueEditor', VueEditor)
 
