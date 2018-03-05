@@ -68,7 +68,7 @@ Vue.use(VueGAPI, {
 })
 
 // Enable devtools
-Vue.config.devtools = false
+Vue.config.devtools = true
 
 sync(store, router)
 
