@@ -7,6 +7,7 @@
     </div>
     <div class="list" v-for="(item, i) in news.data" :key="i">
       <div class="title">
+        <span class="tag" v-if="item.permission === -1">草稿</span>
         <p>{{ item.title }}</p>
       </div>
       <div class="content">

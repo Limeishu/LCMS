@@ -38,3 +38,14 @@ span {
     }
   }
 }
+
+.tag {
+  font-size: 10pt;
+  color: $white;
+  background-color: $gray;
+  padding: 1pt 3pt;
+  margin: calc((24px - 12pt) / 2) 3pt;
+  line-height: 12pt;
+  height: 12pt;
+  border-radius: 2pt;
+}

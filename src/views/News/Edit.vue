@@ -14,7 +14,8 @@
       useCustomImageHandler
       @imageAdded="handleImageAdded"
       v-model="news.paragraph"></vue-editor>
-      <div class="button" @click="update()"><span>送出</span></div>
+    <div class="button" @click="news.permission = 0, update()"><span>發佈</span></div>
+    <div class="button" @click="news.permission = -1, update()"><span>封存為草稿</span></div>
   </div>
 </template>
 
@@ -27,6 +28,7 @@
           title: '',
           content: '',
           paragraph: '',
+          permission: -1,
           meta: {
             image: ''
           }
