@@ -52,6 +52,7 @@
         this.news.content = document.querySelector('.ql-editor').innerText
         let res = await this.sendNews(this.news)
         window.open(`https://limeishu.org.tw/culture/news/${res.nid}`)
+        this.$router.go(-1)
       }
     }
   }
