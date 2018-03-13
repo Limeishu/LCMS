@@ -9,6 +9,11 @@
     <div class="img-list">
       <div class="image" :class="{ 'active': news.meta.image === url }" :style="{ 'background-image': `url(${url})` }" alt="" v-for="(url , i) in img" :key="i" @click="news.meta.image = url"></div>
     </div>
+    <div class="input-box">
+      <input type="date" v-model="news.date" autocomplete="off" required>
+      <span class="bar"></span>
+      <label><span>活動結束日期</span></label>
+    </div>
     <span>內文編輯區</span>
     <vue-editor class="editor"
       useCustomImageHandler
@@ -31,7 +36,8 @@
           permission: -1,
           meta: {
             image: ''
-          }
+          },
+          date: new Date(),
         },
         img: []
       }

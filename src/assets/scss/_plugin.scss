@@ -6,8 +6,7 @@
   color: $tone;
   position: relative;
   margin: 20px 0;
-  input[type="text"],
-  input[type="password"] {
+  input {
     display: flex;
     -webkit-appearance: none !important;
     -moz-appearance: none !important;
