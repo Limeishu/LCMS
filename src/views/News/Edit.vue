@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   export default {
     data () {
       return {
@@ -44,6 +44,9 @@
     },
     mounted () {
       this.getNews()
+    },
+    computed: {
+      ...mapGetters({ user: 'userInfo' })
     },
     methods: {
       ...mapActions(['uploadFile', 'updateNews', 'getNewsByID']),
@@ -64,6 +67,7 @@
       },
       async update () {
         this.news.content = document.querySelector('.ql-editor').innerText
+        this.news.uid = this.user.uid
         let res = await this.updateNews({news: this.news, nid: this.$route.params.nid})
         window.open(`https://limeishu.org.tw/culture/news/${res.nid}`)
         this.$router.go(-1)

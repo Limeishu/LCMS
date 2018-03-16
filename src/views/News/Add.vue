@@ -25,7 +25,7 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   export default {
     data () {
       return {
@@ -42,6 +42,9 @@
         img: []
       }
     },
+    computed: {
+      ...mapGetters({ user: 'userInfo' })
+    },
     methods: {
       ...mapActions(['uploadFile', 'sendNews']),
       async handleImageAdded (file, Editor, cursorLocation, resetUploader) {
@@ -56,6 +59,7 @@
       },
       async send () {
         this.news.content = document.querySelector('.ql-editor').innerText
+        this.news.uid = this.user.uid
         let res = await this.sendNews(this.news)
         window.open(`https://limeishu.org.tw/culture/news/${res.nid}`)
         this.$router.go(-1)

@@ -53,9 +53,9 @@ const actions = {
     }
   },
 
-  async deleteNews ({ commit }, nid) {
+  async deleteNews ({ commit }, {uid, nid}) {
     try {
-      const res = await axios.delete(`https://api.limeishu.org.tw/news/${nid}`)
+      const res = await axios.delete(`https://api.limeishu.org.tw/news/${nid}?uid=${uid}`)
       return res.data.result === 0
     } catch (err) {
       throw err

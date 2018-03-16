@@ -26,7 +26,8 @@
   import { mapActions, mapGetters } from 'vuex'
   export default {
     computed: {
-      ...mapGetters(['news'])
+      ...mapGetters(['news']),
+      ...mapGetters({ user: 'userInfo' })
     },
     mounted () {
       this.getAllNews()
@@ -35,7 +36,7 @@
       ...mapActions(['getAllNews', 'deleteNews']),
       async deleteAction (nid) {
         if (confirm('確定要刪除這篇文章？此動作不可回復')) {
-          let success = await this.deleteNews(nid)
+          let success = await this.deleteNews({uid: this.user.uid, nid})
           if (success) {
             this.getAllNews()
           } else {
