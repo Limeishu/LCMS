@@ -37,7 +37,7 @@
           meta: {
             image: ''
           },
-          date: '',
+          date: ''
         },
         img: []
       }
