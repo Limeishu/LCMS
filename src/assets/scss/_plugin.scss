@@ -111,6 +111,7 @@
   width: 800px;
   padding: 1rem;
   margin: 1rem auto !important;
+  margin-top: 2rem !important;
   background-color: $white;
   border-radius: 2pt;
   .img-list {
@@ -201,7 +202,7 @@
 }
 
 .list-container {
-  margin: 2rem auto;
+  margin: 2rem 2rem 2rem 1rem;
   display: flex;
   flex-direction: column;
   position: relative;

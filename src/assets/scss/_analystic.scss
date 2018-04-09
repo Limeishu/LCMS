@@ -1,7 +1,7 @@
 .analystic {
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 1rem;
   position: relative;
-  width: calc(100% - 4rem);
+  width: calc(100% - 3rem);
   .date-tag {
     svg {
       margin: 0 1rem;
@@ -40,6 +40,7 @@
   }
   .list-container {
     width: 100%;
+    margin: 1rem 0 !important;
     .head {
       width: auto;
       span {
