@@ -45,7 +45,7 @@
           meta: {
             image: ''
           },
-          date: new Date()
+          date: new Date().toLocaleString().split(' ')[0].split('/').join('-')
         },
         img: []
       }
