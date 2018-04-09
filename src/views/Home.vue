@@ -76,6 +76,7 @@ export default {
   methods: {
     async gapi () {
       let gapi = await this.$getGapiClient()
+      await gapi.auth2.getAuthInstance().signIn()
       let res = await gapi.client.request({
         path: '/v4/reports:batchGet',
         root: 'https://analyticsreporting.googleapis.com/',
