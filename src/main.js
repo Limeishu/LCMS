@@ -5,12 +5,10 @@ import { sync }     from 'vuex-router-sync'
 import vueScrollTo  from 'vue-scroll-to'
 import VueCookie    from 'vue-cookie'
 import { VueEditor } from 'vue2-editor'
-import VueGAPI      from 'vue-gapi'
 
 import App          from './App'
 import router       from './router'
 import store        from './store'
-import config       from '../server/config.json'
 
 import FontAwesomeIcon                from '@fortawesome/vue-fontawesome'
 import FontAwesome                    from '@fortawesome/fontawesome'
@@ -59,13 +57,6 @@ Vue.use(VueAxios, axios)
 Vue.use(vueScrollTo)
 
 Vue.use(VueCookie)
-
-Vue.use(VueGAPI, {
-  apiKey: config.gapi.key,
-  clientId: config.gapi.client_id,
-  discoveryDocs: ['https://analyticsreporting.googleapis.com/$discovery/rest?version=v4'],
-  scope: config.gapi.uri
-})
 
 // Enable devtools
 Vue.config.devtools = true

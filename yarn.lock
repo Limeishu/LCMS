@@ -7170,10 +7170,6 @@ vue-cookie@^1.1.4:
   dependencies:
     tiny-cookie "^1.0"
 
-vue-gapi@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/vue-gapi/-/vue-gapi-0.0.6.tgz#2456b6899c7c4a6f319c8da34c56925b2cf25dc8"
-
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.4.tgz#683bd1d026c0d3b3c937d5875679e9a87ec6cd8f"
