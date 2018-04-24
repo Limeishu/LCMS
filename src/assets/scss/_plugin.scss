@@ -262,12 +262,12 @@
 
 .loader {
   position: relative;
-  margin: 0 auto;
+  margin: auto;
   width: 100px;
   &:before {
     content: '';
     display: block;
-    padding-top: 100%;
+    padding-top: 300%;
   }
 }
 

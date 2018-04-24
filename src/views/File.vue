@@ -20,6 +20,7 @@
           <p>大小</p>
         </div>
       </div>
+      <Loader v-if="onload"></Loader>
       <div class="files list" :class="file.type" v-for="(file , i) in files" :key="i" @click="file.type === 'directory' ? (files = file.contents, nowPath.push(file.name)) : download(file.name)">
         <p class="name"><font-awesome-icon :icon="file.type === 'directory' ? ['fas', 'folder'] : fileType(file.name.toLowerCase())" /><span>{{ file.name }}</span></p>
         <p class="time">{{ file.time }}</p>
@@ -30,6 +31,7 @@
 </template>
 
 <script>
+  import { Loader } from '../components/layout'
   import config from '../../server/config.json'
   import { mapActions } from 'vuex'
   export default {
@@ -37,8 +39,12 @@
       return {
         files: [],
         fileList: [],
-        nowPath: []
+        nowPath: [],
+        onload: true
       }
+    },
+    components: {
+      Loader: Loader
     },
     mounted () {
       this.getFile()
@@ -46,17 +52,22 @@
     methods: {
       ...mapActions(['getFiles', 'downloadFile']),
       async getFile () {
+        this.onload = true        
         this.fileList = await this.getFiles()
         this.files = this.fileList
+        this.onload = false
       },
       async changeDir (target, index) {
+        this.onload = true
         let path = this.nowPath.slice(0, index + 1)
         this.files = this.fileList
         path.forEach(ele => {
           this.files = this.files.filter(e => { return e.name === ele })[0].contents
         })
+        this.onload = false
       },
       async download (file) {
+        this.onload = true        
         let url = `https://${config.fileServer.auth.username}:${encodeURI(config.fileServer.auth.password)}@nas.limeishu.org.tw/紀念館資料/${this.nowPath.join('/')}/${file}`
         const link = document.createElement('a')
         link.href = url
@@ -64,6 +75,7 @@
         link.setAttribute('target', '_blank')
         document.body.appendChild(link)
         link.click()
+        this.onload = false
       },
       humenSize (size) {
         switch (parseInt(size.toString().length / 3)) {
