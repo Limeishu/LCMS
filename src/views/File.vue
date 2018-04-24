@@ -52,7 +52,7 @@
     methods: {
       ...mapActions(['getFiles', 'downloadFile']),
       async getFile () {
-        this.onload = true        
+        this.onload = true
         this.fileList = await this.getFiles()
         this.files = this.fileList
         this.onload = false
@@ -67,7 +67,7 @@
         this.onload = false
       },
       async download (file) {
-        this.onload = true        
+        this.onload = true
         let url = `https://${config.fileServer.auth.username}:${encodeURI(config.fileServer.auth.password)}@nas.limeishu.org.tw/紀念館資料/${this.nowPath.join('/')}/${file}`
         const link = document.createElement('a')
         link.href = url
@@ -75,6 +75,7 @@
         link.setAttribute('target', '_blank')
         document.body.appendChild(link)
         link.click()
+        link.remove()
         this.onload = false
       },
       humenSize (size) {
