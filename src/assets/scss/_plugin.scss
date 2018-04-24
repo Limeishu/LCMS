@@ -206,6 +206,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  &.file .list {
+    grid-template-columns: 1fr 15rem 8rem;
+  }
   .list {
     width: calc(100% - 20pt);
     padding: 10pt;
