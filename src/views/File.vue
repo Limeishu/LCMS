@@ -21,8 +21,8 @@
         </div>
       </div>
       <Loader v-if="onload"></Loader>
-      <div class="files list" :class="file.type" v-for="(file , i) in files" :key="i" @click="file.type === 'directory' ? (files = file.contents, nowPath.push(file.name)) : download(file.name)">
-        <p class="name"><font-awesome-icon :icon="file.type === 'directory' ? ['fas', 'folder'] : fileType(file.name.toLowerCase())" /><span>{{ file.name }}</span></p>
+      <div class="files list" :class="file.type" v-for="(file , i) in files" :key="i" @click="file.type === 'directory' ? (files = file.contents, nowPath.push(file.name.replace(/&amp;/g, '&'))) : download(file.name.replace(/&amp;/g, '&'))">
+        <p class="name"><font-awesome-icon :icon="file.type === 'directory' ? ['fas', 'folder'] : fileType(file.name.toLowerCase())" /><span>{{ file.name.replace(/&amp;/g, '&') }}</span></p>
         <p class="time">{{ file.time }}</p>
         <p class="size">{{ file.type === 'directory' ? '--' : humenSize(file.size) }}</p>
       </div>
@@ -70,7 +70,7 @@
         this.onload = true
         let url = `https://${config.fileServer.auth.username}:${encodeURI(config.fileServer.auth.password)}@nas.limeishu.org.tw/紀念館資料/${this.nowPath.join('/')}/${file}`
         const link = document.createElement('a')
-        link.href = url
+        link.href = url.replace(/&amp;/g, '&')
         link.setAttribute('download', file)
         link.setAttribute('target', '_blank')
         document.body.appendChild(link)
