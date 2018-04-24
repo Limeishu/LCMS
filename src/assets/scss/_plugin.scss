@@ -309,3 +309,24 @@
     stroke-dashoffset: -124px;
   }
 }
+
+.files {
+  .name {
+    cursor: pointer;
+    span {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.path-conatiner {
+  display: flex;
+  flex-direction: row;
+  .path {
+    margin-right: 1rem;
+    cursor: pointer;    
+    span {
+      margin-right: 1rem;
+    }
+  }
+}
