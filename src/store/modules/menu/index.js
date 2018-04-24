@@ -23,16 +23,16 @@ const state = {
       },
       components: lazyLoader('Server')
     },
-    // {
-    //   name: 'Control Panel',
-    //   path: '/panel',
-    //   meta: {
-    //     label: ['控制面板'],
-    //     link: 'Panel.vue',
-    //     icon: ['fas', 'columns']
-    //   },
-    //   components: lazyLoader('Panel')
-    // },
+    {
+      name: 'Files',
+      path: '/files',
+      meta: {
+        label: ['檔案庫'],
+        link: 'File.vue',
+        icon: ['fas', 'database']
+      },
+      components: lazyLoader('File')
+    },
     // {
     //   name: 'Post',
     //   path: '/post',
