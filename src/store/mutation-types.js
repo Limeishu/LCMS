@@ -10,6 +10,8 @@ export const NEWS           = 'NEWS'
 
 export const POST           = 'POST'
 
+export const FILES          = 'FILES'
+
 export default {
   UPDATE_TYPE: (state, type) => {
     state.type = type
