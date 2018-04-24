@@ -30,6 +30,7 @@
 </template>
 
 <script>
+  import config from '../../server/config.json'
   import { mapActions } from 'vuex'
   export default {
     // computed: {
@@ -60,7 +61,7 @@
         })
       },
       async download (file) {
-        let url = `https://nas.limeishu.org.tw/紀念館資料/${this.nowPath.join('/')}/${file}`
+        let url = `https://${config.fileServer.auth.username}:${encodeURI(config.fileServer.auth.password)}@nas.limeishu.org.tw/紀念館資料/${this.nowPath.join('/')}/${file}`
         const link = document.createElement('a')
         link.href = url
         link.setAttribute('download', file)
