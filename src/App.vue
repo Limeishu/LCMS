@@ -31,7 +31,7 @@
     },
     methods: {
       checkLogin () {
-        if (!this.isLogin) this.$router.push('/login')
+        if (!this.isLogin && this.$route.name !== 'Registe') this.$router.push('/login')
       }
     },
     watch: {
