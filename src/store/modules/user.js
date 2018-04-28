@@ -33,6 +33,20 @@ const actions = {
   },
   async userLogout ({ commit }) {
     commit(types.SET_USER, {})
+  },
+  async updateUser ({ commit }, {user, uid}) {
+    try {
+      const res = await axios.put(`https://api.limeishu.org.tw/user/${uid}`, {
+        username: user.username,
+        old_password: md5(user.old_password),
+        password: user.password ? md5(user.password) : null,
+        meta: user.meta ? user.meta : null
+      })
+      if (res.data.result !== 0) throw new Error(res.data.err)
+      commit(types.SET_USER, {})
+    } catch (err) {
+      throw err
+    }
   }
 }
 
