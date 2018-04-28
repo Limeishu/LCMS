@@ -1,21 +1,22 @@
 <template>
   <div id="login">
     <div class="container">
+      <h1>登入</h1>
       <div class="msg">
         <p>{{ msg }}</p>
       </div>
       <div class="input-box">
         <input type="text" v-model="user.username" :class="{ 'verified': recaptcha }" autocomplete="off" required>
         <span class="bar"></span>
-        <label><span>User Name</span></label>
+        <label><span>使用者名稱</span></label>
       </div>
       <div class="input-box">
         <input type="password" v-model="user.password" :class="{ 'verified': recaptcha }" autocomplete="off" required>
         <span class="bar"></span>
-        <label><span>Password</span></label>
+        <label><span>密碼</span></label>
       </div>
       <vue-recaptcha class="recaptcha" @verify="onVerify" ref="recaptcha" sitekey="6LefXEEUAAAAAPN6fbJMgC6bEOB2n_4b_CxRXIqv"></vue-recaptcha>
-      <div class="button" @click="login()"><span>Login</span></div>
+      <div class="button" @click="login()"><span>登入</span></div>
     </div>
   </div>
 </template>
