@@ -50,7 +50,10 @@ const actions = {
   },
   async addUser ({ commit }, user) {
     try {
-      const res = await axios.post(`https://api.limeishu.org.tw/user/new`, user)
+      const res = await axios.post(`https://api.limeishu.org.tw/user/new`, {
+        username: user.username,
+        password: md5(user.password)
+      })
       if (res.data.result !== 0) throw new Error(res.data.err)
       return res.data.result
     } catch (err) {
