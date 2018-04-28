@@ -70,6 +70,7 @@
             await this.updateUser({user: this.user, uid: this.userInfo.uid})
           } catch (err) {
             this.msg = `舊密碼錯誤，請再試一次。`
+            this.$refs.recaptcha.reset()
           }
         }
       }

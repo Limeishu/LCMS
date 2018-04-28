@@ -54,6 +54,7 @@
             await this.userLogin(this.user)
           } catch (err) {
             this.msg = `帳號或密碼錯誤，請再試一次。`
+            this.$refs.recaptcha.reset()
           }
         }
       },
