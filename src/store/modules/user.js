@@ -47,6 +47,15 @@ const actions = {
     } catch (err) {
       throw err
     }
+  },
+  async addUser ({ commit }, user) {
+    try {
+      const res = await axios.post(`https://api.limeishu.org.tw/user/new`, user)
+      if (res.data.result !== 0) throw new Error(res.data.err)
+      return res.data.result
+    } catch (err) {
+      throw err
+    }
   }
 }
 
