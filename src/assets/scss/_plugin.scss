@@ -18,26 +18,17 @@
     font-size: 14pt;
     font-weight: 600;
     outline: none;
-    &:valid {
-      ~ label {
-        color: $tone !important;
-      }
-      ~ .bar {
-        &:before, &:after {
-          background: $tone !important;
-        }
-      }
-    }
     &:required {
       box-shadow: none;
       &:invalid.verified {
-        ~ label {
+        ~label {
           top: -20px;
           font-size: 10pt;
           color: $red !important;
         }
-        ~ .bar {
-          &:before, &:after {
+        ~.bar {
+          &:before,
+          &:after {
             width: 50%;
             background: $red;
           }
@@ -46,13 +37,14 @@
     }
     &:focus,
     &:valid {
-      ~ label {
+      ~label {
         top: -20px;
         font-size: 10pt;
         color: inherit;
       }
-      ~ .bar {
-        &:before, &:after {
+      ~.bar {
+        &:before,
+        &:after {
           width: 50%;
         }
       }
@@ -114,6 +106,30 @@
   margin-top: 2rem !important;
   background-color: $white;
   border-radius: 2pt;
+  &.user {
+    width: 400px;
+    header {
+      margin-bottom: 2rem;
+      h1 {
+        margin-bottom: 5pt;
+      }
+      h1+p {
+        margin-bottom: 10pt;
+      }
+    }
+    .user-config {
+      >.input-box {
+        margin: 25pt 0;
+      }
+      .msg {
+        color: $red;
+        display: flex;
+        font-size: 10pt;
+        padding: 10px 10px 10px 5px;
+        height: 10pt;
+      }
+    }
+  }
   .img-list {
     height: 5rem;
     width: 100%;
@@ -146,7 +162,6 @@
   }
 }
 
-
 .paragraph {
   img {
     width: 720px;
@@ -155,7 +170,8 @@
     margin: 3rem 0 1rem 0;
     font-weight: 500;
   }
-  p, ul {
+  p,
+  ul {
     margin: 1rem 0 !important;
     line-height: 1.6;
     font-size: 12pt;
@@ -167,7 +183,7 @@
       margin: 0;
     }
   }
-  p > img {
+  p>img {
     transform: translateX(-25pt);
   }
   ul {
@@ -327,7 +343,7 @@
   flex-direction: row;
   .path {
     margin-right: 1rem;
-    cursor: pointer;    
+    cursor: pointer;
     span {
       margin-right: 1rem;
     }
