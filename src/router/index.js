@@ -25,6 +25,11 @@ const router =  new Router({
       components: lazyLoader('Login')
     },
     {
+      name: 'Registe',
+      path: '/registe',
+      components: lazyLoader('Registe')
+    },
+    {
       name: 'User',
       path: '/user',
       components: lazyLoader('User')
