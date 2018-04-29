@@ -146,6 +146,11 @@
             return ['fas', 'file']
         }
       }
+    },
+    watch: {
+      files: (files) => {
+        window.scrollTo(0, 0)
+      }
     }
   }
 </script>
