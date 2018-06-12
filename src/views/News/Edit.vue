@@ -14,7 +14,7 @@
           :key="i" @click="news.meta.image = url"></div>
       </div>
       <div>
-        <vue-datepicker :singleDateSelection="true" :i18n="i18n" v-model="chooseDate" />
+        <vue-datepicker :singleDateSelection="true" :startDateValue="news.date" :i18n="i18n" v-model="chooseDate" />
       </div>
       <span>內文編輯區</span>
       <vue-editor class="editor" useCustomImageHandler @imageAdded="handleImageAdded" v-model="news.paragraph"></vue-editor>

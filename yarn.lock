@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@aries0d0f/vue2-datepicker@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@aries0d0f/vue2-datepicker/-/vue2-datepicker-1.1.2.tgz#4f64bfff6508ed005a5331a1d033fae3db4f852e"
+"@aries0d0f/vue2-datepicker@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@aries0d0f/vue2-datepicker/-/vue2-datepicker-1.1.3.tgz#56f1056ebd15b6fe679d6d88e5467e654cd1e3e8"
   dependencies:
     vue "^2.5.2"
 
