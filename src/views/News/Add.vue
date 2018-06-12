@@ -13,12 +13,8 @@
         <div class="image" :class="{ 'active': news.meta.image === url }" :style="{ 'background-image': `url(${url})` }" alt="" v-for="(url , i) in img"
           :key="i" @click="news.meta.image = url"></div>
       </div>
-      <div class="input-box">
-        <input type="date" v-model="news.date" autocomplete="off" required>
-        <span class="bar"></span>
-        <label>
-          <span>活動結束日期</span>
-        </label>
+      <div>
+        <vue-datepicker :singleDateSelection="true" :i18n="i18n" v-model="chooseDate" />
       </div>
       <span>內文編輯區</span>
       <vue-editor class="editor" useCustomImageHandler @imageAdded="handleImageAdded" v-model="news.paragraph"></vue-editor>
@@ -45,9 +41,17 @@
           meta: {
             image: ''
           },
-          date: new Date().toLocaleString().split(' ')[0].split('/').join('-')
+          date: ''
         },
-        img: []
+        img: [],
+        chooseDate: {},
+        i18n: {
+          'day-names': [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
+          'start-date': 'Start Date',
+          'end-date': 'End Date',
+          'choose-date': '選擇活動結束日期',
+          'month-names': [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+        }
       }
     },
     computed: {
@@ -66,6 +70,7 @@
         resetUploader()
       },
       async send () {
+        this.news.date = this.chooseDate.start
         this.news.content = document.querySelector('.ql-editor').innerText
         this.news.uid = this.user.uid
         let res = await this.sendNews(this.news)

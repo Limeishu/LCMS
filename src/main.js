@@ -5,6 +5,7 @@ import { sync }     from 'vuex-router-sync'
 import vueScrollTo  from 'vue-scroll-to'
 import VueCookie    from 'vue-cookie'
 import { VueEditor } from 'vue2-editor'
+import VueDatepicker from '@aries0d0f/vue2-datepicker'
 
 import App          from './App'
 import router       from './router'
@@ -57,6 +58,8 @@ Vue.use(VueAxios, axios)
 Vue.use(vueScrollTo)
 
 Vue.use(VueCookie)
+
+Vue.component('VueDatepicker', VueDatepicker)
 
 // Enable devtools
 Vue.config.devtools = true
