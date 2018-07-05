@@ -24,7 +24,7 @@
         <vue-datepicker :singleDateSelection="true" :i18n="i18n" v-model="chooseDate" />
       </div>
       <span>內文編輯區</span>
-      <vue-editor class="editor" useCustomImageHandler @imageAdded="handleImageAdded" v-model="news.paragraph"></vue-editor>
+      <vue-editor class="editor" useCustomImageHandler :editorToolbar="customToolbar" @imageAdded="handleImageAdded" v-model="news.paragraph"></vue-editor>
       <div class="button" @click="news.permission = 0, send()">
         <span>發佈</span>
       </div>
@@ -40,6 +40,13 @@
   export default {
     data () {
       return {
+        customToolbar: [
+          [{'header': [false, 1, 2, 3]}],
+          ['bold', 'italic', 'underline'],
+          [{'list': 'ordered'}, {'list': 'bullet'}],
+          ['link', 'image', 'video'],
+          ['clean']
+        ],
         news: {
           title: '',
           content: '',
