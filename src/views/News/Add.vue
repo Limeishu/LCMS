@@ -13,6 +13,13 @@
         <div class="image" :class="{ 'active': news.meta.image === url }" :style="{ 'background-image': `url(${url})` }" alt="" v-for="(url , i) in img"
           :key="i" @click="news.meta.image = url"></div>
       </div>
+      <div class="input-box">
+        <input type="text" v-model="news.meta.imageAlt" autocomplete="off" required>
+        <span class="bar"></span>
+        <label>
+          <span>圖片說明</span>
+        </label>
+      </div>
       <div>
         <vue-datepicker :singleDateSelection="true" :i18n="i18n" v-model="chooseDate" />
       </div>
@@ -39,7 +46,8 @@
           paragraph: '',
           permission: -1,
           meta: {
-            image: ''
+            image: '',
+            imageAlt: ''
           },
           date: ''
         },
