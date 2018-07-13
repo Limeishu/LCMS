@@ -8,17 +8,32 @@
           <span>標題</span>
         </label>
       </div>
-      <span :class="{ 'active': news.meta.image }">{{ img.length === 0 ? '先上傳圖片至內文編輯區' : '請選擇主要圖片' }}</span>
-      <div class="img-list">
+      <span v-if="!videoAsPreview" :class="{ 'active': news.meta.image }">{{ img.length === 0 ? '先上傳圖片至內文編輯區' : '請選擇主要圖片' }}</span>
+      <div v-if="!videoAsPreview" class="img-list">
         <div class="image" :class="{ 'active': news.meta.image === url }" :style="{ 'background-image': `url(${url})` }" alt="" v-for="(url , i) in img"
           :key="i" @click="news.meta.image = url"></div>
       </div>
-      <div class="input-box">
+      <div v-if="!videoAsPreview" class="input-box">
         <input type="text" v-model="news.meta.imageAlt" autocomplete="off" required>
         <span class="bar"></span>
         <label>
           <span>圖片說明</span>
         </label>
+      </div>
+      <div class="input-box" v-if="videoAsPreview">
+        <input type="text" v-model="news.meta.video" autocomplete="off" required>
+        <span class="bar"></span>
+        <label>
+          <span>影片連結</span>
+        </label>
+      </div>
+      <div class="switch-box">
+        <p>以圖片作為文章預覽</p>
+        <label class="switch">
+          <input type="checkbox" v-model="videoAsPreview">
+          <div class="slider round"></div>
+        </label>
+        <p>以影片作為文章預覽</p>
       </div>
       <div>
         <vue-datepicker :singleDateSelection="true" :startDateValue="news.date" :i18n="i18n" v-model="chooseDate" />
@@ -40,6 +55,7 @@
   export default {
     data () {
       return {
+        videoAsPreview: false,
         news: {
           title: '',
           content: '',
@@ -47,6 +63,7 @@
           permission: -1,
           meta: {
             image: '',
+            video: '',
             imageAlt: ''
           },
           date: ''
@@ -89,6 +106,7 @@
         resetUploader()
       },
       async update () {
+        if (!this.videoAsPreview) this.news.meta.video = ''
         this.news.date = this.chooseDate.start
         this.news.content = document.querySelector('.ql-editor').innerText
         this.news.uid = this.user.uid
