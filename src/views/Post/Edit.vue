@@ -76,7 +76,7 @@
           'day-names': [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ],
           'start-date': 'Start Date',
           'end-date': 'End Date',
-          'choose-date': '改變活動結束日期',
+          'choose-date': '文章發佈日期',
           'month-names': [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
         }
       }
