@@ -16,7 +16,7 @@ const router =  new Router({
     },
     {
       name: 'Post Edit',
-      path: '/post/edit/:nid',
+      path: '/post/edit/:pid',
       components: lazyLoader('Post/Edit')
     },
     {

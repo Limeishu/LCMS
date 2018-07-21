@@ -43,9 +43,19 @@ const actions = {
     }
   },
 
-  async deletePost ({ commit }, pid) {
+  async updatePost ({ commit }, {post, pid}) {
     try {
-      const res = await axios.delete(`https://api.limeishu.org.tw/post/${pid}`)
+      const res = await axios.put(`https://api.limeishu.org.tw/post/${pid}`, post)
+      if (res.data.result !== 0) throw new Error(res.data.err)
+      return res.data
+    } catch (err) {
+      throw err
+    }
+  },
+
+  async deletePost ({ commit }, {uid, pid}) {
+    try {
+      const res = await axios.delete(`https://api.limeishu.org.tw/post/${pid}?uid=${uid}`)
       return res.data.result === 0
     } catch (err) {
       throw err
