@@ -94,6 +94,7 @@
       async handleImageAdded (file, Editor, cursorLocation, resetUploader) {
         let formData = new FormData()
         formData.append('image', file)
+        formData.append('uid', this.user.uid)
         let url = await this.uploadFile(formData)
         setTimeout(() => {
           Editor.insertEmbed(cursorLocation, 'image', url)
