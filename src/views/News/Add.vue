@@ -109,6 +109,15 @@
         let res = await this.sendNews(this.news)
         window.open(`https://limeishu.org.tw/culture/news/${res.nid}`)
         this.$router.go(-1)
+      },
+      addIdTag2SubTitle () {
+        const subTitle = Array.from(document.querySelectorAll('.ql-editor>h2'))
+        subTitle.forEach(ele => (ele.id = ele.innerText))
+      }
+    },
+    watch: {
+      'news.paragraph': function () {
+        this.addIdTag2SubTitle()
       }
     }
   }

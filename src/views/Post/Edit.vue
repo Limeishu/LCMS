@@ -114,6 +114,15 @@
         let res = await this.updatePost({post: this.post, pid: this.$route.params.pid})
         window.open(`https://limeishu.org.tw/culture/post/${res.pid}`)
         this.$router.go(-1)
+      },
+      addIdTag2SubTitle () {
+        const subTitle = Array.from(document.querySelectorAll('.ql-editor>h2'))
+        subTitle.forEach(ele => (ele.id = ele.innerText))
+      }
+    },
+    watch: {
+      'post.paragraph': function () {
+        this.addIdTag2SubTitle()
       }
     }
   }
