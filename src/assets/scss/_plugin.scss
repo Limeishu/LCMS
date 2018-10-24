@@ -6,6 +6,7 @@
   color: $tone;
   position: relative;
   margin: 20px 0;
+
   input {
     display: flex;
     -webkit-appearance: none !important;
@@ -18,15 +19,19 @@
     font-size: 14pt;
     font-weight: 600;
     outline: none;
+
     &:required {
       box-shadow: none;
+
       &:invalid.verified {
         ~label {
           top: -20px;
           font-size: 10pt;
           color: $red !important;
         }
+
         ~.bar {
+
           &:before,
           &:after {
             width: 50%;
@@ -35,6 +40,7 @@
         }
       }
     }
+
     &:focus,
     &:valid {
       ~label {
@@ -42,7 +48,9 @@
         font-size: 10pt;
         color: inherit;
       }
+
       ~.bar {
+
         &:before,
         &:after {
           width: 50%;
@@ -50,10 +58,12 @@
       }
     }
   }
+
   .bar {
     position: absolute;
     display: block;
     width: 100%;
+
     &:before,
     &:after {
       content: '';
@@ -64,13 +74,16 @@
       background: $tone;
       transition: all ease .2s;
     }
+
     &:before {
       left: 50%;
     }
+
     &:after {
       right: 50%;
     }
   }
+
   label {
     font-size: 14pt;
     position: absolute;
@@ -94,6 +107,7 @@
   box-shadow: 1pt 1pt 2pt rgba($black, .5);
   text-transform: uppercase;
   transition: all .3s;
+
   &:hover {
     box-shadow: 2pt 2pt 4pt rgba($black, .5);
   }
@@ -106,21 +120,27 @@
   margin-top: 2rem !important;
   background-color: $white;
   border-radius: 2pt;
+
   &.user {
     width: 400px;
+
     header {
       margin-bottom: 2rem;
+
       h1 {
         margin-bottom: 5pt;
       }
+
       h1+p {
         margin-bottom: 10pt;
       }
     }
+
     .user-config {
       >.input-box {
         margin: 25pt 0;
       }
+
       .msg {
         color: $red;
         display: flex;
@@ -130,6 +150,7 @@
       }
     }
   }
+
   .img-list {
     height: 5rem;
     width: 100%;
@@ -137,6 +158,7 @@
     flex-direction: row;
     justify-content: flex-start;
     margin: 1rem 0;
+
     .image {
       height: 5rem;
       width: 5rem;
@@ -145,66 +167,99 @@
       background-position: center;
       background-size: cover;
       box-sizing: border-box;
+
       &.active {
         border: 2pt solid $tone;
       }
     }
   }
+
   >span {
     font-size: 10pt;
     margin: 2rem 0 1rem 0;
+
     &.active {
       color: $tone;
     }
   }
+
   .button {
     background-color: $tone;
   }
 }
 
 .paragraph {
-  img {
+
+  img,
+  iframe {
     width: 720px;
+    border-radius: 10pt;
   }
+
   h1 {
     margin: 3rem 0 1rem 0;
     font-weight: 500;
   }
+
+  h3 {
+    margin: 1.5rem 0 1rem 0 !important;
+  }
+  
   p,
   ul {
-    margin: 1rem 0;
     line-height: 1.6;
     font-size: 12pt;
     color: $content;
+    margin-bottom: 1rem !important;
   }
+
   p {
     text-indent: 25pt;
+
     >a {
       margin: 0;
     }
   }
+
+  ul {
+
+    &,
+    +p {
+      margin: 0  !important;
+    }
+  }
+
   p>img {
     transform: translateX(-25pt);
   }
+
   ul {
     background-color: $light;
     padding: 1rem !important;
-    border-radius: 2pt;
+    border-radius: 10pt;
+
     li {
       text-indent: 0;
       list-style: disc;
       margin: 0 0 1rem 1rem;
       line-height: 1.6;
+
       &:last-child {
         margin-bottom: 0;
       }
+
+      >a {
+        margin: 0;
+      }
     }
   }
+
   h2 {
     position: relative;
     padding-left: 2rem !important;
     margin: 2rem 0 1rem 0 !important;
     font-weight: 500;
+
     &:before {
       pointer-events: none;
       transform: translateX(-2rem);
@@ -222,9 +277,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
+
   &.file .list {
     grid-template-columns: 1fr 15rem 8rem;
   }
+
   .list {
     width: calc(100% - 20pt);
     padding: 10pt;
@@ -237,28 +294,35 @@
     text-align: left;
     background-color: $white;
     border-radius: 2pt;
+
     &.head {
       background-color: $tone;
       color: $white;
       padding: 5pt 10pt;
+
       .action p:last-child {
         color: inherit;
       }
     }
+
     >div {
       display: flex;
       justify-content: flex-start;
     }
+
     .action {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+
       p {
         cursor: pointer;
+
         &:hover {
           color: $tone;
           transition: all .3s;
         }
+
         &:last-child {
           color: $red;
         }
@@ -280,6 +344,7 @@
   position: relative;
   margin: auto;
   width: 100px;
+
   &:before {
     content: '';
     display: block;
@@ -319,10 +384,12 @@
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
   }
+
   50% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -35px;
   }
+
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -124px;
@@ -332,6 +399,7 @@
 .files {
   .name {
     cursor: pointer;
+
     span {
       margin-left: 1rem;
     }
@@ -341,9 +409,11 @@
 .path-conatiner {
   display: flex;
   flex-direction: row;
+
   .path {
     margin-right: 1rem;
     cursor: pointer;
+
     span {
       margin-right: 1rem;
     }
@@ -356,9 +426,11 @@
   cursor: pointer;
   width: 60px;
   height: 34px;
+
   input {
     display: none;
   }
+
   .slider {
     position: absolute;
     top: 16px;
@@ -370,6 +442,7 @@
     -webkit-transition: .4s;
     transition: .4s;
   }
+
   .slider:before {
     position: absolute;
     content: "";
@@ -381,21 +454,26 @@
     -webkit-transition: .4s;
     transition: .4s;
   }
+
   input:checked+.slider {
     background-color: $tone;
   }
+
   input:focus+.slider {
     box-shadow: 0 0 1px $tone;
   }
+
   input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
+
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }
+
   .slider.round:before {
     border-radius: 50%;
   }
@@ -405,9 +483,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
   p {
     text-indent: 0;
   }
+
   .switch {
     margin: 0 1rem;
   }
