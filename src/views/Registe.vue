@@ -3,7 +3,6 @@
     <div class="container">
       <h1>註冊</h1>
       <div class="msg">
-        <p>{{ msg }}</p>
       </div>
       <div class="input-box">
         <input type="text" v-model="user.username" :class="{ 'verified': recaptcha }" autocomplete="off" required>
@@ -28,7 +27,6 @@
   export default {
     data () {
       return {
-        msg: '',
         recaptcha: false,
         user: {
           username: '',
@@ -40,17 +38,16 @@
       VueRecaptcha
     },
     methods: {
-      ...mapActions(['addUser']),
+      ...mapActions(['addUser', 'setMessage']),
       async reg () {
-        this.msg = ''
         if (!this.recaptcha) {
-          this.msg = `請先進行機器人驗證`
+          this.setMessage({ title: '請先進行機器人驗證', status: 'warning' })
         } else {
           try {
             await this.addUser(this.user)
-            this.msg = `已成功註冊，待審核後方可登入`
+            this.setMessage({ title: `${this.user.username} 已成功註冊，待管理員審核後方可登入`, status: 'ok' })
           } catch (err) {
-            this.msg = `使用者名稱已被註冊`
+            this.setMessage({ title: '使用者名稱已被註冊', status: 'error' })
             this.$refs.recaptcha.reset()
           }
         }

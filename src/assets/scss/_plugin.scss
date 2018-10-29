@@ -204,7 +204,7 @@
   h3 {
     margin: 1.5rem 0 1rem 0 !important;
   }
-  
+
   p,
   ul {
     line-height: 1.6;
@@ -225,7 +225,7 @@
 
     &,
     +p {
-      margin: 0  !important;
+      margin: 0 !important;
     }
   }
 
@@ -431,5 +431,56 @@
 
   .switch {
     margin: 0 1rem;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.message {
+  &-container {
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 10rem - 40pt);
+  }
+
+  position: relative;
+  margin: 10pt;
+  background-color: $tone;
+  display: flex;
+  width: 100%;
+  border-radius: 5pt;
+  color: $white;
+  padding: 10pt;
+  transition: all 1s ease-in-out;
+  animation: fadeOut 3s ease-out;
+  animation-fill-mode: forwards;
+
+  .icon {
+    margin: 0 5pt;
+  }
+
+  &.error {
+    background-color: $red;
+  }
+
+  &.warning {
+    background-color: $yellow;
+  }
+
+  &.ok {
+    background-color: $green;
   }
 }

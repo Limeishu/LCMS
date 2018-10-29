@@ -3,7 +3,6 @@
     <div class="container">
       <h1>登入</h1>
       <div class="msg">
-        <p>{{ msg }}</p>
       </div>
       <div class="input-box">
         <input type="text" v-model="user.username" :class="{ 'verified': recaptcha }" autocomplete="off" required>
@@ -30,7 +29,6 @@
   export default {
     data () {
       return {
-        msg: '',
         recaptcha: false,
         user: {
           username: '',
@@ -45,16 +43,16 @@
       ...mapGetters(['isLogin'])
     },
     methods: {
-      ...mapActions(['userLogin']),
+      ...mapActions(['userLogin', 'setMessage']),
       async login () {
-        this.msg = ''
         if (!this.recaptcha) {
-          this.msg = `請先進行機器人驗證`
+          this.setMessage({ title: '請先進行機器人驗證', status: 'warning' })
         } else {
           try {
-            await this.userLogin(this.user)
+            const res = await this.userLogin(this.user)
+            this.setMessage({ title: `歡迎回來，${res.meta.nickname || res.username}`, status: 'ok' })
           } catch (err) {
-            this.msg = `帳號或密碼錯誤，請再試一次。`
+            this.setMessage({ title: '帳號或密碼錯誤，請再試一次。', status: 'error' })
             this.$refs.recaptcha.reset()
           }
         }

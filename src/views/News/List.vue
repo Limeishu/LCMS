@@ -49,14 +49,14 @@
       this.getAllNews()
     },
     methods: {
-      ...mapActions(['getAllNews', 'deleteNews']),
-      async deleteAction (nid) {
+      ...mapActions(['getAllPost', 'deletePost', 'setMessage']),
+      async deleteAction (pid) {
         if (confirm('確定要刪除這篇文章？此動作不可回復')) {
-          let success = await this.deleteNews({uid: this.user.uid, nid})
+          let success = await this.deletePost({uid: this.user.uid, pid})
           if (success) {
-            this.getAllNews()
+            this.getAllPost()
           } else {
-            alert('操作失敗！請洽系統管理員')
+            this.setMessage({ title: '操作失敗，請洽系統管理員', status: 'error' })
           }
         }
       },

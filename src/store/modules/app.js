@@ -11,6 +11,17 @@ const state = {
   },
   effect: {
     translate3d: true
+  },
+  message: []
+}
+
+const getters = {
+  message: state => state.message
+}
+
+const actions = {
+  setMessage ({ commit }, msg) {
+    commit(types.MESSAGE, { msg: msg, time: new Date().getTime() })
   }
 }
 
@@ -26,10 +37,16 @@ const mutations = {
     } else {
       state.navbar.opened = true
     }
+  },
+
+  [types.MESSAGE] (state, message) {
+    state.message.push(message)
   }
 }
 
 export default {
   state,
+  getters,
+  actions,
   mutations
 }

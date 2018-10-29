@@ -2,9 +2,10 @@
   <div id="app">
     <Navbar></Navbar>
     <div class="main">
-      <Sidebar class="side"></Sidebar>
-      <mainFooter class="side"></mainFooter>
-      <router-view class="main-container"></router-view>
+      <Message />
+      <Sidebar class="side" />
+      <mainFooter class="side" />
+      <router-view class="main-container" />
     </div>
   </div>
 </template>
@@ -16,12 +17,10 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import { Navbar, mainFooter, Sidebar } from '@/components/layout'
+  import * as layout from '@/components/layout'
   export default {
     components: {
-      Navbar: Navbar,
-      mainFooter: mainFooter,
-      Sidebar: Sidebar
+      ...layout
     },
     computed: {
       ...mapGetters(['isLogin'])

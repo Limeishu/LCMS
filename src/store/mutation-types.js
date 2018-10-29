@@ -14,6 +14,8 @@ export const FILES          = 'FILES'
 
 export const TODOS          = 'TODOS'
 
+export const MESSAGE        = 'MESSAGE'
+
 export default {
   UPDATE_TYPE: (state, type) => {
     state.type = type
