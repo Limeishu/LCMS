@@ -1,6 +1,6 @@
 {
   "name": "lcms",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Limeishu.org content manager system (LCMS).",
   "author": "Aries Cs <aries0d0f@gmail.com>",
   "private": true,
