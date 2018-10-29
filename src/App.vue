@@ -29,7 +29,7 @@
       this.checkLogin()
     },
     mounted () {
-      const themeFromCookie = this.$cookie.get('theme')
+      const themeFromCookie = this.$cookies.get('theme')
       if (themeFromCookie) {
         this.setTheme(themeFromCookie)
       }

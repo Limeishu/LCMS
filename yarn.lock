@@ -7811,6 +7811,10 @@ vue-cookie@^1.1.4:
   dependencies:
     tiny-cookie "^1.0"
 
+vue-cookies@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/vue-cookies/-/vue-cookies-1.5.7.tgz#44b3940b0cbb853ba3f7848f1905cb127ec45eb4"
+
 vue-hot-reload-api@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.0.tgz#97976142405d13d8efae154749e88c4e358cf926"

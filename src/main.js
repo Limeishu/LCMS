@@ -3,7 +3,7 @@ import axios        from 'axios'
 import VueAxios     from 'vue-axios'
 import { sync }     from 'vuex-router-sync'
 import vueScrollTo  from 'vue-scroll-to'
-import VueCookie    from 'vue-cookie'
+import VueCookies   from 'vue-cookies'
 import { VueEditor } from 'vue2-editor'
 import VueDatepicker from '@aries0d0f/vue2-datepicker'
 
@@ -30,7 +30,7 @@ Vue.use(VueAxios, axios)
 
 Vue.use(vueScrollTo)
 
-Vue.use(VueCookie)
+Vue.use(VueCookies)
 
 Vue.component('VueDatepicker', VueDatepicker)
 

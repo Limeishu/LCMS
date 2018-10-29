@@ -78,7 +78,7 @@
       changeTheme (themeName) {
         this.setTheme(themeName)
         this.user.meta.theme = themeName
-        this.$cookie.set('theme', themeName)
+        this.$cookies.set('theme', themeName, Infinity)
       }
     }
   }

@@ -50,6 +50,7 @@
         } else {
           try {
             const res = await this.userLogin(this.user)
+            this.$cookies.set('theme', res.meta.theme || 'meibo-default', Infinity)
             this.setMessage({ title: `歡迎回來，${res.meta.nickname || res.username}`, status: 'ok' })
           } catch (err) {
             this.setMessage({ title: '帳號或密碼錯誤，請再試一次。', status: 'error' })
