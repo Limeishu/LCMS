@@ -29,7 +29,7 @@
   export default {
     data () {
       return {
-        recaptcha: false,
+        recaptcha: true,
         user: {
           username: '',
           password: ''

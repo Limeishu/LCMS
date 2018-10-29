@@ -16,6 +16,8 @@ export const TODOS          = 'TODOS'
 
 export const MESSAGE        = 'MESSAGE'
 
+export const THEME          = 'THEME'
+
 export default {
   UPDATE_TYPE: (state, type) => {
     state.type = type

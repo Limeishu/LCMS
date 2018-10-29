@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="theme">
     <Navbar></Navbar>
     <div class="main">
       <Message />
@@ -16,19 +16,26 @@
 
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
   import * as layout from '@/components/layout'
   export default {
     components: {
       ...layout
     },
     computed: {
-      ...mapGetters(['isLogin'])
+      ...mapGetters(['isLogin', 'theme'])
     },
     created () {
       this.checkLogin()
     },
+    mounted () {
+      const themeFromCookie = this.$cookie.get('theme')
+      if (themeFromCookie) {
+        this.setTheme(themeFromCookie)
+      }
+    },
     methods: {
+      ...mapActions(['setTheme']),
       checkLogin () {
         if (!this.isLogin && this.$route.name !== 'Registe') this.$router.push('/login')
       }

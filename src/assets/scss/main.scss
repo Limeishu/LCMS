@@ -15,6 +15,8 @@
 @import 'analystic';
 @import 'server';
 
+@import 'theme/index';
+
 #app {
   overflow-x: hidden;
   width: 100%;
@@ -38,5 +40,25 @@
     .main-container {
       min-height: inherit;
     }
+  }
+
+  &.meibo-light-red {
+    @include meibo-light($tone: $red);
+  }
+
+  &.meibo-dark-green {
+    @include meibo-dark($tone: $cyan);
+  }
+
+  &.meibo-dark-blue {
+    @include meibo-dark($tone: $blue);
+  }
+
+  &.meibo-dark-red {
+    @include meibo-dark($tone: $red);
+  }
+
+  &.meibo-dark-yellow {
+    @include meibo-dark($tone: $yellow);
   }
 }

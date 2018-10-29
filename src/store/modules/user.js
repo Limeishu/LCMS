@@ -26,6 +26,7 @@ const actions = {
         meta: res.data.meta
       }
       commit(types.SET_USER, userInfo)
+      commit(types.THEME, userInfo.meta.theme || 'meibo-default')
       return res.data
     } catch (err) {
       throw err
