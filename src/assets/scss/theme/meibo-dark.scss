@@ -20,13 +20,27 @@
     }
   }
 
-  .editor-container.paragraph {
-    color: $content;
+  .editor-container {
+    &.paragraph {
+      color: $content;
 
-    h2 {
-      &:before {
-        color: $tone;
+      input {
+        color: $content;
       }
+
+      h2 {
+        &:before {
+          color: $tone;
+        }
+      }
+    }
+
+    >span.active {
+      color: $tone;
+    }
+
+    .image.active {
+      border-color: $tone;
     }
   }
 
@@ -152,6 +166,7 @@
 
   .theme {
     color: $tone;
+
     p {
       color: $white;
     }

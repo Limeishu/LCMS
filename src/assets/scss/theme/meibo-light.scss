@@ -14,11 +14,27 @@
     }
   }
 
-  .paragraph {
-    h2 {
-      &:before {
-        color: $tone;
+  .editor-container {
+    &.paragraph {
+      color: $content;
+
+      input {
+        color: $content;
       }
+
+      h2 {
+        &:before {
+          color: $tone;
+        }
+      }
+    }
+
+    >span.active {
+      color: $tone;
+    }
+
+    .image.active {
+      border-color: $tone;
     }
   }
 
