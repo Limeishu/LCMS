@@ -12,6 +12,7 @@ import upload       from './modules/upload'
 import news         from './modules/news'
 import post         from './modules/post'
 import file         from './modules/file'
+import todos        from './modules/todos'
 
 Vue.use(Vuex)
 
@@ -24,7 +25,8 @@ const store = new Vuex.Store({
     upload,
     news,
     post,
-    file
+    file,
+    todos
   },
   state: {
     toggle: false

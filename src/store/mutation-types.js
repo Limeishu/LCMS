@@ -12,6 +12,8 @@ export const POST           = 'POST'
 
 export const FILES          = 'FILES'
 
+export const TODOS          = 'TODOS'
+
 export default {
   UPDATE_TYPE: (state, type) => {
     state.type = type

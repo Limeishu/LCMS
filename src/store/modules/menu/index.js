@@ -34,6 +34,16 @@ const state = {
       components: lazyLoader('File')
     },
     {
+      name: 'Todo List',
+      path: '/todos',
+      meta: {
+        label: ['待辦事項'],
+        link: 'Todos.vue',
+        icon: ['fas', 'calendar-check']
+      },
+      components: lazyLoader('Todos')
+    },
+    {
       name: 'Post',
       path: '/post',
       meta: {
