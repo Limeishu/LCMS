@@ -16,14 +16,14 @@
   font-size: 10pt;
   text-align: left;
   transition: all .3s;
-  cursor: pointer;
-
+  
   &.completed {
     opacity: .5;
     box-shadow: 1px 1px 3px rgba($gray, .1);
   }
-
+  
   .checkbox {
+    cursor: pointer;
     grid-area: checkbox;
     p {
       font-size: 1.5rem;
@@ -35,6 +35,7 @@
   }
 
   .name {
+    cursor: pointer;
     grid-area: name;
   }
 
