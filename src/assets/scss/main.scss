@@ -61,4 +61,8 @@
   &.meibo-dark-yellow {
     @include meibo-dark($tone: $yellow);
   }
+
+  &.meibo-lsd {
+    @include meibo-lsd;
+  }
 }
