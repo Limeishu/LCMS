@@ -458,11 +458,13 @@
 
 .message {
   &-container {
+    z-index: 999999;
     left: 0;
-    top: 0;
-    position: absolute;
+    top: 4.5rem;
+    position: fixed;
     display: flex;
     flex-direction: column;
+    margin-right: 10pt;
     width: calc(100% - 10rem - 40pt);
   }
 
