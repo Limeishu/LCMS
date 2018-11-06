@@ -115,6 +115,14 @@
     }
   }
 
+  .ql-editor ul>li {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
   .editor-container {
     width: 800px;
     padding: 1rem;
@@ -215,18 +223,19 @@
     iframe {
       width: 720px;
       border-radius: 10pt;
+      margin-bottom: 1rem;
     }
 
-    > h1 {
+    >h1 {
       margin: 3rem 0 1rem 0;
       font-weight: 500;
     }
 
-    > h3 {
+    >h3 {
       margin: 1.5rem 0 1rem 0 !important;
     }
 
-    > p,
+    p,
     ul {
       line-height: 1.6;
       font-size: 12pt;
@@ -234,7 +243,7 @@
       margin-bottom: 1rem !important;
     }
 
-    > p {
+    >p {
       text-indent: 25pt;
 
       >a {
@@ -248,10 +257,6 @@
       +p {
         margin: 0 !important;
       }
-    }
-
-    p>img {
-      transform: translateX(-25pt);
     }
 
     ul {
