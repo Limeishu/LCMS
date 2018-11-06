@@ -17,7 +17,7 @@ const state = {
     {
       colorSets: { tone: '#009999', background: '#F8F8F8', font: '#282828' },
       className: 'meibo-default',
-      name: '原初梅寶'
+      name: '起源梅寶'
     },
     {
       colorSets: { tone: '#F7615C', background: '#F8F8F8', font: '#282828' },
