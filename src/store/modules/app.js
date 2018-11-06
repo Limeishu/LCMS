@@ -20,6 +20,31 @@ const state = {
       name: '原初梅寶'
     },
     {
+      colorSets: { tone: '#F7615C', background: '#F8F8F8', font: '#282828' },
+      className: 'meibo-light-red',
+      name: '瑰麗梅寶'
+    },
+    {
+      colorSets: { tone: '#F7615C', background: '#398FEF', font: '#282828' },
+      className: 'meibo-lsd',
+      name: '呼麻梅寶'
+    },
+    {
+      colorSets: { tone: '#F7615C', background: '#282828', font: '#FFFFFF' },
+      className: 'meibo-dark-red',
+      name: '魅惑梅寶'
+    },
+    {
+      colorSets: { tone: '#F78055', background: '#282828', font: '#FFFFFF' },
+      className: 'meibo-dark-orange',
+      name: '無雙梅寶'
+    },
+    {
+      colorSets: { tone: '#FABD40', background: '#282828', font: '#FFFFFF' },
+      className: 'meibo-dark-yellow',
+      name: '黃蜂梅寶'
+    },
+    {
       colorSets: { tone: '#009999', background: '#282828', font: '#FFFFFF' },
       className: 'meibo-dark-green',
       name: '暗黑梅寶'
@@ -30,24 +55,9 @@ const state = {
       name: '午夜梅寶'
     },
     {
-      colorSets: { tone: '#F7615C', background: '#282828', font: '#FFFFFF' },
-      className: 'meibo-dark-red',
-      name: '魅惑梅寶'
-    },
-    {
-      colorSets: { tone: '#FABD40', background: '#282828', font: '#FFFFFF' },
-      className: 'meibo-dark-yellow',
-      name: '黃蜂梅寶'
-    },
-    {
-      colorSets: { tone: '#F7615C', background: '#F8F8F8', font: '#282828' },
-      className: 'meibo-light-red',
-      name: '瑰麗梅寶'
-    },
-    {
-      colorSets: { tone: '#F7615C', background: '#6638F0', font: '#282828' },
-      className: 'meibo-lsd',
-      name: '大麻梅寶'
+      colorSets: { tone: '#FFFFFF', background: '#282828', font: '#FFFFFF' },
+      className: 'meibo-dark-white',
+      name: '單身梅寶'
     }
   ],
   theme: 'meibo-default'

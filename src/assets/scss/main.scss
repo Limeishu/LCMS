@@ -28,15 +28,18 @@
   flex-direction: column;
   overflow: hidden;
   background-color: $light;
+
   .main {
     position: relative;
     margin-top: 4rem;
     min-height: calc(100vh - 4rem);
     width: 100%;
+
     >div:not(.side) {
       margin-left: 10rem;
       margin-right: 0;
     }
+
     .main-container {
       min-height: inherit;
     }
@@ -48,6 +51,18 @@
     @include meibo-light($tone: $red);
   }
 
+  &.meibo-dark-red {
+    @include meibo-dark($tone: $red);
+  }
+
+  &.meibo-dark-orange {
+    @include meibo-dark($tone: $orange);
+  }
+
+  &.meibo-dark-yellow {
+    @include meibo-dark($tone: $yellow);
+  }
+
   &.meibo-dark-green {
     @include meibo-dark($tone: $cyan);
   }
@@ -56,12 +71,9 @@
     @include meibo-dark($tone: $blue);
   }
 
-  &.meibo-dark-red {
-    @include meibo-dark($tone: $red);
-  }
-
-  &.meibo-dark-yellow {
-    @include meibo-dark($tone: $yellow);
+  &.meibo-dark-white {
+    @include meibo-dark($tone: $cyan);
+    filter: grayscale(100%);
   }
 
   &.meibo-lsd {

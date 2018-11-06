@@ -34,7 +34,7 @@
               <div class="back" :style="{ 'background-color': theme.colorSets.background }"></div>
             </div>
             <p>{{ theme.name }}</p>
-            <p>
+            <p class="icon">
               <font-awesome-icon v-if="nowTheme === theme.className" icon="check" />
               <font-awesome-icon v-else-if="!nowTheme && (theme.className === 'meibo-default')" icon="check" />
             </p>

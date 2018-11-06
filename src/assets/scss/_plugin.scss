@@ -520,14 +520,17 @@
     &-picker {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       width: 100%;
     }
 
     position: relative;
     display: flex;
-    flex-direction: column;
+    width: calc(33% - 2rem);
+    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
-    margin: 0 1rem;
+    margin: .5rem 1rem;
     color: $tone;
     cursor: pointer;
 
@@ -540,7 +543,7 @@
       height: 2rem;
       width: 2rem;
       border-radius: 50%;
-      transform: rotate(135deg);
+      transform: rotate(45deg);
 
       .back {
         height: 1rem;
@@ -553,6 +556,11 @@
       }
     }
 
+    .icon {
+      position: absolute;
+      left: .9rem;
+      font-size: 1.2rem;
+    }
   }
 
   .datepicker-inputbox,
