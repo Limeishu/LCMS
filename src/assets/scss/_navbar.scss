@@ -1,40 +1,48 @@
-.navbar {
-  width: calc(100% - 4rem);
-  height: 4rem;
-  position: fixed;
-  color: $white;
-  background-color: $tone;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  z-index: 1000;
-  h1 {
-    font-size: 24px;
-    &.logo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      .version {
-        margin-left: 5px;
-        font-size: 12px;
-        background-color: $white;
-        color: $tone;
-        padding: 5px;
-        border-radius: 1rem;
-        line-height: 12px;
-      }
-    }
-  }
-  .user {
+@mixin navbar($tone) {
+  .navbar {
+    width: calc(100% - 4rem);
+    height: 4rem;
+    position: fixed;
+    color: $white;
+    background-color: $tone;
     display: flex;
     flex-direction: row;
-    p {
-      cursor: pointer;
-      padding-left: 1rem;
-      span {
-        margin-left: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    z-index: 1000;
+
+    h1 {
+      font-size: 24px;
+
+      &.logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .version {
+          margin-left: 5px;
+          font-size: 12px;
+          background-color: $white;
+          color: $tone;
+          padding: 5px;
+          border-radius: 1rem;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .user {
+      display: flex;
+      flex-direction: row;
+
+      p {
+        cursor: pointer;
+        padding-left: 1rem;
+
+        span {
+          margin-left: 5px;
+        }
       }
     }
   }

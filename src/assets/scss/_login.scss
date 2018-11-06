@@ -1,30 +1,34 @@
-#login {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  .container {
-    background-color: $white;
-    padding: 2rem;
-    border-radius: 3pt;
-    box-shadow: 1pt 1pt 2pt rgba($black, .5);
+@mixin login($tone, $backColor, $fontColor) {
+  #login {
     display: flex;
-    flex-direction: column;
-    input {
-      background: transparent;
-    }
-    * {
-      letter-spacing: 0;
-    }
-    .msg {
-      color: $red;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    color: $fontColor;
+
+    .container {
+      background-color: $backColor;
+      padding: 2rem;
+      border-radius: 3pt;
+      box-shadow: 1pt 1pt 2pt rgba($black, .5);
       display: flex;
-      font-size: 10pt;
-      padding: 10px 10px 10px 5px;
-      height: 10pt;
-    }
-    .button {
-      background: $tone;
+      flex-direction: column;
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      input {
+        background: transparent;
+      }
+
+      * {
+        letter-spacing: 0;
+      }
+
+      .button {
+        background: $tone;
+      }
     }
   }
 }

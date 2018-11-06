@@ -1,29 +1,37 @@
-.sidebar {
-  max-height: 100%;
-  width: 10rem;
-  position: fixed;
-  color: $black;
-  z-index: 10000;
-  ul {
-    padding: 2rem 1rem 2rem 2rem;
-    display: flex;
-    flex-direction: column;
-    li {
-      height: 2rem;
-      a {
-        transition: color .3s;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        &:hover,
-        &.active {
-          color: $tone;
-        }
-        span {
-          margin-left: 7px;
+@mixin sidebar($tone, $fontColor) {
+  .sidebar {
+    max-height: 100%;
+    width: 10rem;
+    position: fixed;
+    color: $fontColor;
+    z-index: 10000;
+
+    ul {
+      padding: 2rem 1rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        height: 2rem;
+
+        a {
+          transition: color .3s;
+          text-decoration: none;
+          color: inherit;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          outline: none;
+
+          &:hover,
+          &.active {
+            color: $tone;
+          }
+
+          span {
+            margin-left: 7px;
+          }
         }
       }
     }

@@ -1,175 +1,19 @@
 @mixin meibo-dark ($tone) {
+
   background-color: $black;
   color: $white;
 
-  .button {
-    background-color: $tone;
-  }
+  @include plugin($tone: $tone, $backColor: $dark, $fontColor: $white);
+  @include navbar($tone: $tone);
+  @include sidebar($tone: $tone, $fontColor: $white);
+  @include login($tone: $tone, $backColor: $dark, $fontColor: $white);
+  @include server($tone: $tone, $backColor: $dark, $fontColor: $white);
+  @include todos($tone: $tone, $backColor: $dark, $fontColor: $white, $shadowColor: $black);
+  @include footer($fontColor: $white);
+  @include list($tone: $tone, $backColor: $dark, $fontColor: $white);
 
-  input {
-    color: $white;
-  }
-
-  .switch {
-    .slider {
-
-      &,
-      &:before {
-        background-color: $tone;
-      }
-    }
-  }
-
-  .editor-container {
-    &.paragraph {
-      color: $content;
-
-      input {
-        color: $content;
-      }
-
-      h2 {
-        &:before {
-          color: $tone;
-        }
-      }
-    }
-
-    >span.active {
-      color: $tone;
-    }
-
-    .image.active {
-      border-color: $tone;
-    }
-  }
-
-  .datepicker-inputbox,
-  .datepicker-main-wrapper {
+  ::selection {
+    background-color: $white;
     color: $tone;
-    border-color: $tone;
-
-    input {
-      color: $tone;
-      text-shadow: 0 0 0 $tone;
-    }
-
-    .datepicker-month-name {
-      background-color: $tone;
-    }
-
-    .datepicker-table-cal.datepicker-day {
-
-      &:hover,
-      &.active {
-        background-color: $tone;
-      }
-    }
   }
-
-  .input-box {
-    color: $tone;
-
-    .bar {
-
-      &:before,
-      &:after {
-        background: $tone;
-      }
-    }
-  }
-
-  .navbar {
-    background-color: $tone;
-
-    .version {
-      color: $tone;
-    }
-  }
-
-  .container {
-    box-shadow: 1pt 1pt 3pt rgba($black, .7);
-  }
-
-  .footer {
-    color: $white;
-  }
-
-  .list {
-
-    &.head {
-      background-color: $tone;
-    }
-
-    .action {
-      p:hover {
-        color: $tone;
-      }
-    }
-
-    background-color: $dark;
-  }
-
-  #login {
-    .container {
-      background-color: $dark;
-    }
-  }
-
-  .server-list .container {
-    background-color: $dark;
-  }
-
-  .sidebar {
-    color: $white;
-
-    ul li a {
-
-      &:hover,
-      &.active {
-        color: $tone;
-      }
-    }
-  }
-
-  .loader {
-    svg.circular {
-      .path {
-        stroke: $tone;
-      }
-    }
-  }
-
-  .todos {
-    &.indent-1 {
-      background-color: $tone;
-    }
-
-    &.indent-2 {
-      background-color: $dark;
-
-      .checkbox {
-        color: $tone;
-      }
-    }
-
-    box-shadow: 1pt 1pt 3pt rgba($black, .7);
-  }
-
-  .editor-container.user {
-    background-color: $dark;
-
-    input {
-      color: $white;
-    }
-  }
-
-  .theme {
-    color: $tone;
-
-    p {
-      color: $white;
-    }
-  }
-
 }

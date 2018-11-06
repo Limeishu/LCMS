@@ -1,133 +1,18 @@
 @mixin meibo-light ($tone) {
 
-  .button {
-    background-color: $tone;
+  background-color: $light;
+
+  @include plugin($tone: $tone, $backColor: $white, $fontColor: $dark);
+  @include navbar($tone: $tone);
+  @include sidebar($tone: $tone, $fontColor: $dark);
+  @include login($tone: $tone, $backColor: $white, $fontColor: $dark);
+  @include server($tone: $tone, $backColor: $white, $fontColor: $dark);
+  @include todos($tone: $tone, $backColor: $white, $fontColor: $dark, $shadowColor: $gray);
+  @include footer($fontColor: $dark);
+  @include list($tone: $tone, $backColor: $white, $fontColor: $dark);
+
+  ::selection {
+    background-color: lighten($tone, 5);
+    color: $white;
   }
-
-  .switch {
-    .slider {
-
-      &,
-      &:before {
-        background-color: $tone;
-      }
-    }
-  }
-
-  .editor-container {
-    &.paragraph {
-      color: $content;
-
-      input {
-        color: $content;
-      }
-
-      h2 {
-        &:before {
-          color: $tone;
-        }
-      }
-    }
-
-    >span.active {
-      color: $tone;
-    }
-
-    .image.active {
-      border-color: $tone;
-    }
-  }
-
-  .datepicker-inputbox,
-  .datepicker-main-wrapper {
-    color: $tone;
-    border-color: $tone;
-
-    input {
-      color: $tone;
-      text-shadow: 0 0 0 $tone;
-    }
-
-    .datepicker-month-name {
-      background-color: $tone;
-    }
-
-    .datepicker-table-cal.datepicker-day {
-
-      &:hover,
-      &.active {
-        background-color: $tone;
-      }
-    }
-  }
-
-  .input-box {
-    color: $tone;
-
-    .bar {
-
-      &:before,
-      &:after {
-        background: $tone;
-      }
-    }
-  }
-
-  .navbar {
-    background-color: $tone;
-
-    .version {
-      color: $tone;
-    }
-  }
-
-  .list {
-
-    &.head {
-      background-color: $tone;
-    }
-
-    .action {
-      p:hover {
-        color: $tone;
-      }
-    }
-  }
-
-  .sidebar {
-
-    ul li a {
-
-      &:hover,
-      &.active {
-        color: $tone;
-      }
-    }
-  }
-
-  .loader {
-    svg.circular {
-      .path {
-        stroke: $tone;
-      }
-    }
-  }
-
-  .todos {
-    &.indent-1 {
-      background-color: $tone;
-    }
-
-    &.indent-2 {
-
-      .checkbox {
-        color: $tone;
-      }
-    }
-  }
-
-  .theme {
-    color: $tone;
-  }
-
 }

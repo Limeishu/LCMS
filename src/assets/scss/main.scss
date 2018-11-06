@@ -42,6 +42,8 @@
     }
   }
 
+  @include meibo-light($tone: $cyan);
+
   &.meibo-light-red {
     @include meibo-light($tone: $red);
   }

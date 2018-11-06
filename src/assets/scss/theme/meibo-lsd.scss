@@ -1,15 +1,10 @@
 @mixin meibo-lsd($tone: $red) {
-  background-color: $black;
-  color: $white;
 
+  @include meibo-dark($tone: $red);
   $lsd-gradient: linear-gradient(90deg, $red, $yellow, $green, $blue, $purple, $red);
 
   .button {
     background: $lsd-gradient;
-  }
-
-  input {
-    color: $white;
   }
 
   .switch {
@@ -23,24 +18,6 @@
   }
 
   .editor-container {
-    &.paragraph {
-      color: $content;
-
-      input {
-        color: $content;
-      }
-
-      h2 {
-        &:before {
-          color: $tone;
-        }
-      }
-    }
-
-    >span.active {
-      color: $tone;
-    }
-
     .image.active {
       border-image: $lsd-gradient;
     }
@@ -48,13 +25,7 @@
 
   .datepicker-inputbox,
   .datepicker-main-wrapper {
-    color: $tone;
     border-image: $lsd-gradient;
-
-    input {
-      color: $tone;
-      text-shadow: 0 0 0 $tone;
-    }
 
     .datepicker-month-name {
       background: $lsd-gradient;
@@ -70,8 +41,6 @@
   }
 
   .input-box {
-    color: $tone;
-
     .bar {
 
       &:before,
@@ -83,94 +52,17 @@
 
   .navbar {
     background: $lsd-gradient;
-
-    .version {
-      color: $tone;
-    }
-  }
-
-  .container {
-    box-shadow: 1pt 1pt 3pt rgba($black, .7);
-  }
-
-  .footer {
-    color: $white;
   }
 
   .list {
-
     &.head {
       background: $lsd-gradient;
-    }
-
-    .action {
-      p:hover {
-        color: $tone;
-      }
-    }
-
-    background-color: $dark;
-  }
-
-  #login {
-    .container {
-      background-color: $dark;
-    }
-  }
-
-  .server-list .container {
-    background-color: $dark;
-  }
-
-  .sidebar {
-    color: $white;
-
-    ul li a {
-
-      &:hover,
-      &.active {
-        color: $tone;
-      }
-    }
-  }
-
-  .loader {
-    svg.circular {
-      .path {
-        stroke: $tone;
-      }
     }
   }
 
   .todos {
     &.indent-1 {
       background: $lsd-gradient;
-    }
-
-    &.indent-2 {
-      background-color: $dark;
-
-      .checkbox {
-        color: $tone;
-      }
-    }
-
-    box-shadow: 1pt 1pt 3pt rgba($black, .7);
-  }
-
-  .editor-container.user {
-    background-color: $dark;
-
-    input {
-      color: $white;
-    }
-  }
-
-  .theme {
-    color: $tone;
-
-    p {
-      color: $white;
     }
   }
 }
