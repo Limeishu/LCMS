@@ -1,6 +1,7 @@
 @mixin server($tone, $backColor, $fontColor) {
   .server-container {
     padding: 2rem 2rem 2rem 1rem;
+
     h2 {
       margin-bottom: 1rem;
     }
@@ -9,40 +10,108 @@
   .server-list {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     position: relative;
 
     .container {
+      width: calc(100% - 125px);
       display: flex;
       flex-direction: column;
-      margin-right: 20pt;
+      justify-content: center;
+      margin: 20pt;
+      margin-bottom: 3rem;
       padding: 10pt;
-      box-shadow: 1pt 1pt 2pt rgba($black, .5);
-      border-radius: 2pt;
       position: relative;
-      background-color: $backColor;
       transition: all .3s;
-      &:hover {
-        box-shadow: 0pt 0pt 5pt rgba($tone, .8);
+      filter: drop-shadow(0 5px 0 rgba($tone, .3));
+
+      .box {
+        &-icon {
+          cursor: pointer;
+          z-index: 1;
+          position: absolute;
+          transform: rotate(45deg);
+          width: 100px;
+          height: 100px;
+          border: 1px solid $tone;
+        }
+        &-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 100px;
+          transform: rotate(-45deg) translateY(-2.5pt);
+          p {
+            color: $tone;
+          }
+          h1 {
+            text-align: center;
+            font-size: 26pt;
+            line-height: 28pt;
+            letter-spacing: 0.2pt;
+            font-weight: 200;
+            span {
+              position: absolute;
+              line-height: 40pt;
+              font-size: 10pt;
+            }
+          }         
+        }
       }
 
-      h1 {
-        font-size: 18pt;
-        margin-bottom: 5pt;
-        color: $fontColor;
+      .info {
+        margin-left: 130px;
+        z-index: 1;
+        &:before {
+          content: '';
+          position: absolute;
+          transform: translate(-35pt, 50pt);
+          width: calc(100% - 65px);
+          border: 0.5pt solid $tone;
+        }
+        h1 {
+          font-size: 18pt;
+          margin-bottom: 5pt;
+          color: $fontColor;
+        }
+  
+        p {
+          color: $tone;
+          font-size: 10pt;
+  
+          span {
+            margin-left: 1rem;
+          }
+        }
       }
 
-      p {
-        color: $red;
-        font-size: 10pt;
-
-        &.active {
-          color: $green;
+      .cpu-chart,
+      .mem-chart {
+        &-container {
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          transform: skewX(-45deg) translate(100pt, 40pt);
         }
-
-        span {
-          margin-left: 1rem;
+        box-sizing: border-box;
+        border: 1px solid $tone;
+        height: 15px;
+        width: 40px;
+        margin-right: 5px;
+        overflow: hidden;
+        .state {
+          transition: all .3s ease-in-out;
+          height: 15px;
+          width: 40px;
+          background-color: $tone;
         }
+      }
+
+      .mem-chart,
+      .mem-chart .state {
+        width: 300px;
       }
 
       .state-container {

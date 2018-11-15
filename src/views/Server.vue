@@ -4,8 +4,30 @@
       <h2>概覽</h2>
       <div class="server-list">
         <div class="container" v-for="(item, i) in serverState" :key="i">
-          <h1>{{ serverList[i].name }}</h1>
-          <p :class="{ 'active': item.check.ping }"><font-awesome-icon :icon="['fas', 'circle']" /><span>{{ serverList[i].ip }}</span></p>
+          <div class="box-icon" @click="choosedState === 'cpu' ? choosedState = 'memory' : choosedState = 'cpu'">
+            <div class="box-info" v-if="choosedState === 'cpu'">
+              <p>CPU</p>
+              <h1>{{ (item[item.length - 1].cpu['1s'].reduce((a,b) => a + b, 0) / item[item.length - 1].cpu['1s'].length * 100).toFixed(1) }}<span>%</span></h1>
+            </div>
+            <div class="box-info" v-else>
+              <p>MEM</p>
+              <h1>{{ (item[item.length - 1].memory.system.free / item[item.length - 1].memory.system.total * 100).toFixed(1) }}<span>%</span></h1>
+            </div>
+          </div>
+          <div class="info">
+            <h1>{{ serverList[i].name }}</h1>
+            <p>IP: {{ serverList[i].ip }}</p>
+          </div>
+          <div class="cpu-chart-container" v-if="item[item.length - 1] && choosedState === 'cpu'">
+            <div class="cpu-chart" v-for="(usage, index) in item[item.length - 1].cpu['1s']" :key="index">
+              <div class="state" :style="{ 'transform': `translateX(-${100 - usage * 100}%)`}"></div>
+            </div>
+          </div>
+          <div class="mem-chart-container" v-else>
+            <div class="mem-chart">
+              <div class="state" :style="{ 'transform': `translateX(-${100 - (item[item.length - 1].memory.system.free / item[item.length - 1].memory.system.total * 100).toFixed(2)}%)`}"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -25,6 +47,7 @@
       return {
         serverList: config.serverList,
         serverState: [],
+        choosedState: 'cpu',
         dataCollection: null,
         chartOptions: {
           scales: {
@@ -63,10 +86,13 @@
       ...mapGetters(['storageUsage', 'theme', 'themeList'])
     },
     mounted () {
-      this.serverList.forEach(async ele => {
-        let data = await this.getServerState(ele.api)
-        this.serverState.push(data)
-      })
+      this.serverState = Array.apply(null, {length: this.serverList.length}).map(e => [])
+      setInterval(() => {
+        this.serverList.forEach(async (ele, index) => {
+          let data = await this.getServerState(ele.api)
+          this.serverState[index].push(data)
+        })
+      }, 1000)
       this.renderChart()
     },
     methods: {
