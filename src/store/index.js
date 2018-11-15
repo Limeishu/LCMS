@@ -13,6 +13,7 @@ import news         from './modules/news'
 import post         from './modules/post'
 import file         from './modules/file'
 import todos        from './modules/todos'
+import monit        from './modules/monit'
 
 Vue.use(Vuex)
 
@@ -26,7 +27,8 @@ const store = new Vuex.Store({
     news,
     post,
     file,
-    todos
+    todos,
+    monit
   },
   state: {
     toggle: false

@@ -18,6 +18,8 @@ export const MESSAGE        = 'MESSAGE'
 
 export const THEME          = 'THEME'
 
+export const STORAGE_USAGE  = 'STORAGE_USAGE'
+
 export default {
   UPDATE_TYPE: (state, type) => {
     state.type = type

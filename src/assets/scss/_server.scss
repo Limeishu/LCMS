@@ -1,7 +1,13 @@
 @mixin server($tone, $backColor, $fontColor) {
+  .server-container {
+    padding: 2rem 2rem 2rem 1rem;
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
   .server-list {
     display: flex;
-    padding: 2rem;
     flex-wrap: wrap;
     flex-direction: row;
     position: relative;
@@ -9,7 +15,7 @@
     .container {
       display: flex;
       flex-direction: column;
-      margin: 10pt;
+      margin-right: 20pt;
       padding: 10pt;
       box-shadow: 1pt 1pt 2pt rgba($black, .5);
       border-radius: 2pt;
