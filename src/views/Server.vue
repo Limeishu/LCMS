@@ -11,7 +11,7 @@
             </div>
             <div class="box-info" v-else>
               <p>MEM</p>
-              <h1>{{ (item[item.length - 1].memory.system.free / item[item.length - 1].memory.system.total * 100).toFixed(1) }}<span>%</span></h1>
+              <h1>{{ (100 - (item[item.length - 1].memory.system.free / item[item.length - 1].memory.system.total * 100)).toFixed(1) }}<span>%</span></h1>
             </div>
           </div>
           <div class="info">
@@ -25,7 +25,7 @@
           </div>
           <div class="mem-chart-container" v-else>
             <div class="mem-chart">
-              <div class="state" :style="{ 'transform': `translateX(-${100 - (item[item.length - 1].memory.system.free / item[item.length - 1].memory.system.total * 100).toFixed(2)}%)`}"></div>
+              <div class="state" :style="{ 'transform': `translateX(-${(item[item.length - 1].memory.system.free / item[item.length - 1].memory.system.total * 100).toFixed(2)}%)`}"></div>
             </div>
           </div>
         </div>
