@@ -56,7 +56,7 @@
           if (success) {
             this.getAllNews()
           } else {
-            this.setMessage({ title: '操作失敗，請洽系統管理員', status: 'error' })
+            this.setMessage({ title: '操作失敗，你沒有權限進行此操作', status: 'error' })
           }
         }
       },

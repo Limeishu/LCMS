@@ -9,7 +9,8 @@ const state = {
       meta: {
         label: ['主頁面'],
         link: 'Home.vue',
-        icon: ['fas', 'home']
+        icon: ['fas', 'home'],
+        permission: 99
       },
       components: lazyLoader('Home')
     },
@@ -19,7 +20,8 @@ const state = {
       meta: {
         label: ['伺服器'],
         link: 'Server.vue',
-        icon: ['fas', 'server']
+        icon: ['fas', 'server'],
+        permission: 99
       },
       components: lazyLoader('Server')
     },
@@ -29,7 +31,8 @@ const state = {
       meta: {
         label: ['檔案庫'],
         link: 'File.vue',
-        icon: ['fas', 'database']
+        icon: ['fas', 'database'],
+        permission: 1
       },
       components: lazyLoader('File')
     },
@@ -39,7 +42,8 @@ const state = {
       meta: {
         label: ['待辦事項'],
         link: 'Todos.vue',
-        icon: ['fas', 'calendar-check']
+        icon: ['fas', 'calendar-check'],
+        permission: 1
       },
       components: lazyLoader('Todos')
     },
@@ -49,7 +53,8 @@ const state = {
       meta: {
         label: ['新增文章'],
         link: 'Post.vue',
-        icon: ['fas', 'file']
+        icon: ['fas', 'file'],
+        permission: 3
       },
       components: lazyLoader('Post/Add')
     },
@@ -59,7 +64,8 @@ const state = {
       meta: {
         label: ['文章列表'],
         link: 'Post.vue',
-        icon: ['fas', 'list-alt']
+        icon: ['fas', 'list-alt'],
+        permission: 3
       },
       components: lazyLoader('Post/List')
     },
@@ -69,7 +75,8 @@ const state = {
       meta: {
         label: ['新增新聞'],
         link: 'News.vue',
-        icon: ['fas', 'plus']
+        icon: ['fas', 'plus'],
+        permission: 2
       },
       components: lazyLoader('News/Add')
     },
@@ -79,7 +86,8 @@ const state = {
       meta: {
         label: ['新聞列表'],
         link: 'News.vue',
-        icon: ['fas', 'newspaper']
+        icon: ['fas', 'newspaper'],
+        permission: 2
       },
       components: lazyLoader('News/List')
     }

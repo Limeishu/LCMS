@@ -40,7 +40,7 @@
       </div>
       <span>內文編輯區</span>
       <vue-editor class="editor" useCustomImageHandler :editorToolbar="customToolbar" @imageAdded="handleImageAdded" v-model="news.paragraph"></vue-editor>
-      <div class="button" @click="news.permission = 0, send()">
+      <div class="button" @click="news.permission = 0, send()" v-if="user.permission === 1">
         <span>發佈</span>
       </div>
       <div class="button" @click="news.permission = -1, send()">
