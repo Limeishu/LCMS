@@ -47,6 +47,7 @@
       return {
         serverList: config.serverList,
         serverState: [],
+        serverStateLiveGetter: null,
         choosedState: 'cpu',
         dataCollection: null,
         chartOptions: {
@@ -87,7 +88,7 @@
     },
     mounted () {
       this.serverState = Array.apply(null, {length: this.serverList.length}).map(e => [])
-      setInterval(() => {
+      this.serverStateLiveGetter = setInterval(() => {
         this.serverList.forEach(async (ele, index) => {
           let data = await this.getServerState(ele.api)
           this.serverState[index].push(data)
@@ -144,6 +145,9 @@
         gradient.addColorStop(1, `rgba(${color}, 0)`)
         return gradient
       }
+    },
+    beforeDestroy () {
+      clearInterval(this.serverStateLiveGetter)
     }
   }
 </script>
