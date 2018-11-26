@@ -10,6 +10,7 @@
   @include todos($tone: $tone, $backColor: $white, $fontColor: $dark, $shadowColor: $gray);
   @include footer($fontColor: $dark);
   @include list($tone: $tone, $backColor: $white, $fontColor: $dark);
+  @include monit($tone: $tone, $backColor: $white, $fontColor: $dark);
 
   ::selection {
     background-color: lighten($tone, 5);

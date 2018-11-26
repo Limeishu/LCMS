@@ -11,6 +11,7 @@
   @include todos($tone: $tone, $backColor: $dark, $fontColor: $white, $shadowColor: $black);
   @include footer($fontColor: $white);
   @include list($tone: $tone, $backColor: $dark, $fontColor: $white);
+  @include monit($tone: $tone, $backColor: $dark, $fontColor: $white);
 
   ::selection {
     background-color: $white;

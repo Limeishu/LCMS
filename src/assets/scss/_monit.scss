@@ -1,0 +1,26 @@
+@mixin monit ($tone, $backColor, $fontColor) {
+  .monit {
+    &-container {
+      padding: 2rem 2rem 2rem 1rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    width: calc(25% - 4px);
+    position: relative;
+    margin-bottom: 4px;
+    box-sizing: border-box;
+    border: 1px solid $tone;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      color: $tone;
+      margin-left: .5rem;
+    }
+  }
+}

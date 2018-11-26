@@ -37,6 +37,17 @@ const state = {
       components: lazyLoader('File')
     },
     {
+      name: 'Monit',
+      path: '/monit',
+      meta: {
+        label: ['監視器'],
+        link: 'Monit.vue',
+        icon: ['fas', 'video'],
+        permission: 1
+      },
+      components: lazyLoader('Monit')
+    },
+    {
       name: 'Todo List',
       path: '/todos',
       meta: {
