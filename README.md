@@ -1,4 +1,4 @@
-# 李梅樹網站管理系統 Li Mei-Shu Content Management System
+# 李梅樹中央管理系統 Li Mei-Shu Central Management System
 
 ![Build Status](https://jenkins.limeishu.org.tw/job/LCMS/job/master/badge/icon)
 
