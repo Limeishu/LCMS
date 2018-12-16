@@ -59,9 +59,6 @@
             }],
             yAxes: [{
               ticks: {
-                min: 0,
-                max: null,
-                stepSize: 5,
                 callback: (label, index, lables) => {
                   return `${label} TB`
                 }
@@ -106,7 +103,6 @@
 
       async renderChart () {
         await this.getStorageUsage()
-        this.chartOptions.scales.yAxes[0].ticks.max = Math.max(...this.storageUsage.map(e => (e.size / 1000000000000).toFixed(2))) + 5
         let themeColorHex = this.themeList.filter(e => e.className === this.theme)[0].colorSets.tone
         let themeColorRGB = this.colorHexConvert(themeColorHex)
         const chartData = {
