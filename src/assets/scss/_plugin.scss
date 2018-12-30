@@ -576,9 +576,17 @@
     color: $tone;
     cursor: pointer;
 
+    @media screen and (max-width: 575px) {
+      width: calc(100% - 2rem);
+      justify-content: center;
+    }
+
     p {
       color: $fontColor;
       text-align: center;
+      @media screen and (max-width: 575px) {
+        margin-left: auto;
+      }
     }
 
     .box {
@@ -602,6 +610,9 @@
       position: absolute;
       left: .9rem;
       font-size: 1.2rem;
+      @media screen and (max-width: 575px) {
+        left: .45rem;
+      }
     }
   }
 
