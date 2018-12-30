@@ -1,6 +1,6 @@
 {
   "name": "lcms",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Limeishu Central Management System (LCMS).",
   "author": "Aries Cs <aries0d0f@gmail.com>",
   "private": true,
