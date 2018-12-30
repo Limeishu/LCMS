@@ -3,7 +3,7 @@
     <Navbar></Navbar>
     <div class="main">
       <Message />
-      <Sidebar class="side" />
+      <Sidebar v-show="isLogin" class="side" />
       <mainFooter class="side" />
       <router-view class="main-container" />
     </div>

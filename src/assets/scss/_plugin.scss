@@ -22,6 +22,10 @@
       outline: none;
       color: $fontColor;
 
+      @media screen and (max-width: 675px) {
+        font-size: 12pt;
+      }
+
       &:required {
         box-shadow: none;
 
@@ -94,6 +98,10 @@
       top: 10px;
       transition: all ease .2s;
       color: $gray;
+
+      @media screen and (max-width: 675px) {
+        font-size: 12pt;
+      }
     }
   }
 
@@ -132,6 +140,15 @@
     border-radius: 2pt;
     color: $dark;
 
+    @media screen and (max-width: 1200px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: auto;
+      margin: 1rem !important;
+    }
+
     .input-box input {
       color: $dark;
     }
@@ -140,6 +157,10 @@
       background-color: $backColor;
       color: $fontColor;
       width: 500px;
+
+      @media screen and (max-width: 900px) {
+        width: auto;
+      }
 
       .input-box input {
         color: $fontColor;
@@ -426,6 +447,10 @@
       background-color: $tone;
       -webkit-transition: .4s;
       transition: .4s;
+
+      @media screen and (max-width: 675px) {
+        left: -2px;
+      }
     }
 
     input:checked+.slider {
@@ -459,10 +484,18 @@
 
     p {
       text-indent: 0;
+
+      @media screen and (max-width: 675px) {
+        font-size: 8pt;
+      }
     }
 
     .switch {
       margin: 0 1rem;
+
+      @media screen and (max-width: 675px) {
+        margin: 0 0.5rem;
+      }
     }
   }
 
@@ -490,6 +523,10 @@
       flex-direction: column;
       margin-right: 10pt;
       width: calc(100% - 10rem - 40pt);
+
+      @media screen and (max-width: 900px) {
+        width: calc(100% - 3rem - 40pt);
+      }
     }
 
     position: relative;
@@ -568,10 +605,21 @@
     }
   }
 
+  .datepicker-main-wrapper {
+    @media screen and (max-width: 675px) {
+      margin-top: 2rem;
+    }
+  }
+
   .datepicker-inputbox,
   .datepicker-main-wrapper {
     color: $tone;
     border-color: $tone;
+
+    @media screen and (max-width: 675px) {
+      transform-origin: 0 0;
+      transform: scale(.8);
+    }
 
     input {
       color: $tone;

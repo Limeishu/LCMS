@@ -23,6 +23,11 @@
     transition: all .3s;
     color: $fontColor;
 
+    @media screen and (max-width: 575px) {
+      grid-template-areas: "checkbox date" "checkbox name";
+      grid-template-columns: 3rem 1fr;
+    }
+
     &.completed {
       opacity: .5;
       box-shadow: 1px 1px 3px rgba($gray, .1);

@@ -3,7 +3,11 @@
     padding: 2rem 2rem 2rem 1rem;
 
     @media screen and (max-width: 575px) {
-      margin: 1rem;
+      padding: 2rem;
+    }
+
+    @media screen and (max-width: 320px) {
+      padding: 1rem;
     }
 
     h2 {
@@ -29,6 +33,20 @@
       transition: all .3s;
       filter: drop-shadow(0 5px 0 rgba($tone, .3));
 
+      @media screen and (max-width: 675px) {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 575px) {
+        width: 100%;
+        margin: 10pt 0;
+        padding: 10pt 0;
+      }
+
+      @media screen and (max-width: 475px) {
+        padding: 20pt 0;
+      }
+
       .box {
         &-icon {
           cursor: pointer;
@@ -38,7 +56,13 @@
           width: 100px;
           height: 100px;
           border: 1px solid $tone;
+
+          @media screen and (max-width: 575px) {
+            width: 70px;
+            height: 70px;
+          }
         }
+
         &-info {
           display: flex;
           flex-direction: column;
@@ -47,19 +71,37 @@
           width: 100px;
           height: 100px;
           transform: rotate(-45deg) translateY(-2.5pt);
+
+          @media screen and (max-width: 575px) {
+            width: 70px;
+            height: 70px;
+          }
+
           p {
             color: $tone;
           }
+
           h1 {
             text-align: center;
             font-size: 26pt;
             line-height: 28pt;
             letter-spacing: 0.2pt;
             font-weight: 200;
+
+            @media screen and (max-width: 575px) {
+              font-size: 18pt;
+              line-height: 16pt;
+            }
+
             span {
               position: absolute;
               line-height: 40pt;
               font-size: 10pt;
+
+              @media screen and (max-width: 575px) {
+                font-size: 8pt;
+                line-height: 22pt;
+              }
             }
           }
         }
@@ -68,22 +110,60 @@
       .info {
         margin-left: 130px;
         z-index: 1;
+
+        @media screen and (max-width: 575px) {
+          margin-left: 100px;
+        }
+
+        @media screen and (max-width: 414px) {
+          margin-left: 70px;
+        }
+
         &:before {
           content: '';
           position: absolute;
           transform: translate(-35pt, 50pt);
           width: calc(100% - 65px);
           border: 0.5pt solid $tone;
+
+          @media screen and (max-width: 575px) {
+            transform: translate(-40pt, 50pt);
+          }
+
+          @media screen and (max-width: 475px) {
+            transform: translate(-17pt, 45pt);
+          }
         }
+
         h1 {
           font-size: 18pt;
           margin-bottom: 5pt;
           color: $fontColor;
+
+          @media screen and (max-width: 575px) {
+            font-size: 12pt;
+            line-height: 10pt;
+            margin-bottom: 3pt;
+          }
+
+          @media screen and (max-width: 475px) {
+            font-size: 10pt;
+            margin: 0;
+            text-align: right;
+          }
         }
 
         p {
           color: $tone;
           font-size: 10pt;
+
+          @media screen and (max-width: 575px) {
+            font-size: 8pt;
+          }
+
+          @media screen and (max-width: 475px) {
+            text-align: right;
+          }
 
           span {
             margin-left: 1rem;
@@ -98,13 +178,24 @@
           display: flex;
           flex-direction: row;
           transform: skewX(-45deg) translate(100pt, 40pt);
+
+          @media screen and (max-width: 575px) {
+            transform: skewX(-45deg) translate(67pt, 35pt);
+          }
         }
+
         box-sizing: border-box;
         border: 1px solid $tone;
         height: 15px;
         width: 40px;
         margin-right: 5px;
         overflow: hidden;
+
+        @media screen and (max-width: 575px) {
+          width: 21px;
+          height: 7px;
+        }
+
         .state {
           transition: all .3s ease-in-out;
           height: 15px;
@@ -116,6 +207,9 @@
       .mem-chart,
       .mem-chart .state {
         width: 300px;
+        @media screen and (max-width: 575px) {
+          width: 200px;
+        }
       }
 
       .state-container {

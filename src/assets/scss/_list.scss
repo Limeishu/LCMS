@@ -7,7 +7,7 @@
     color: $fontColor;
 
     @media screen and (max-width: 575px) {
-      padding: 1rem;
+      margin: 1rem;
     }
 
     &.file .list {
@@ -27,13 +27,38 @@
       background-color: $backColor;
       border-radius: 2pt;
 
+      @media screen and (max-width: 900px) {
+        grid-template-areas:
+          "title action"
+          "content action";
+        grid-template-columns: 1fr 8rem;
+        grid-template-rows: auto 1fr;
+      }
+
+      .title {
+        grid-area: title;
+        p {
+          font-weight: 800;
+        }
+      }
+
+      .content {
+        grid-area: content;
+      }
+
+      .action {
+        grid-area: action;
+      }
+
       &.head {
         background-color: $tone;
         color: $white;
         padding: 5pt 10pt;
 
         .action p {
-          &:last-child, &:hover {
+
+          &:last-child,
+          &:hover {
             color: inherit;
           }
         }

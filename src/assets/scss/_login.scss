@@ -6,6 +6,10 @@
     align-items: center;
     color: $fontColor;
 
+    &.main-container {
+      margin: 0;
+    }
+
     .container {
       background-color: $backColor;
       padding: 2rem;
@@ -13,6 +17,33 @@
       box-shadow: 1pt 1pt 2pt rgba($black, .5);
       display: flex;
       flex-direction: column;
+
+      @media screen and (max-width: 575px) {
+        padding: 1rem;
+
+        .recaptcha, .recaptcha > div {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+        padding: 1.5rem;
+
+        .recaptcha, .recaptcha > div, .recaptcha iframe {
+          width: 280px !important;
+          border-radius: 3pt;
+          overflow: hidden;
+        }
+      }
+
+      @media screen and (max-width: 375px) {
+
+        .recaptcha, .recaptcha > div, .recaptcha iframe {
+          width: 250px !important;
+        }
+      }
+
+
 
       h1 {
         margin-bottom: 1rem;

@@ -12,13 +12,33 @@
     padding: 0 2rem;
     z-index: 1000;
 
+    @media screen and (max-width: 575px) {
+      padding: 0 1rem;
+      width: calc(100% - 2rem);
+    }
+
     h1 {
       font-size: 24px;
+
+      span {
+        font-weight: 600;
+      }
+
+      @media screen and (max-width: 575px) {
+        font-size: 18px;
+      }
 
       &.logo {
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        span {
+          z-index: 1;
+          @media screen and (max-width: 414px) {
+            text-shadow: 0 0 3px $tone;
+          }
+        }
 
         .version {
           margin-left: 5px;
@@ -28,6 +48,27 @@
           padding: 5px;
           border-radius: 1rem;
           line-height: 12px;
+          z-index: 0;
+
+          @media screen and (max-width: 900px) {
+            font-size: 8px;
+            padding: 3px;
+            margin-left: 0;
+          }
+
+          @media screen and (max-width: 414px) {
+            position: absolute;
+            transform: scale(0.7) translate(15px, -20px);
+          }
+        }
+
+        @media screen and (max-width: 414px) {
+          flex-direction: column-reverse;
+          align-items: flex-end;
+
+          span {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -39,6 +80,15 @@
       p {
         cursor: pointer;
         padding-left: 1rem;
+
+        @media screen and (max-width: 900px) {
+          font-size: 14px;
+          padding-left: 5px;
+        }
+
+        @media screen and (max-width: 414px) {
+          font-size: 12px;
+        }
 
         span {
           margin-left: 5px;
