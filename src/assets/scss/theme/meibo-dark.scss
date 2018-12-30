@@ -5,7 +5,7 @@
 
   @include plugin($tone: $tone, $backColor: $dark, $fontColor: $white);
   @include navbar($tone: $tone);
-  @include sidebar($tone: $tone, $fontColor: $white);
+  @include sidebar($tone: $tone, $backColor: $dark, $fontColor: $white);
   @include login($tone: $tone, $backColor: $dark, $fontColor: $white);
   @include server($tone: $tone, $backColor: $dark, $fontColor: $white);
   @include todos($tone: $tone, $backColor: $dark, $fontColor: $white, $shadowColor: $black);

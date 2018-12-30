@@ -1,4 +1,4 @@
-@mixin sidebar($tone, $fontColor) {
+@mixin sidebar($tone, $backColor, $fontColor) {
   .sidebar {
     max-height: 100%;
     width: 10rem;
@@ -14,7 +14,28 @@
       li {
         height: 2rem;
 
+        &.toggle-btn {
+          display: none;
+          transform: translateX(-1rem);
+
+          a {
+            width: 100%;
+            flex-direction: row;
+            align-content: center;
+            background-color: $tone;
+
+            &:hover {
+              color: inherit !important;
+            }
+          }
+
+          svg {
+            padding: 1px;
+          }
+        }
+
         a {
+          height: 100%;
           transition: color .3s;
           text-decoration: none;
           color: inherit;
@@ -33,6 +54,58 @@
             margin-left: 7px;
           }
         }
+      }
+    }
+
+    @media screen and (max-width: 575px) {
+      width: 3rem;
+      height: 100vh;
+      transition: all .3s ease-in-out;
+      background-color: $backColor;
+      box-shadow: 1px 1rem 1rem rgba(darken($backColor, 10), 0.3);
+
+      ul>li {
+        width: 2rem;
+        overflow: hidden;
+
+        &.toggle-btn {
+          width: 3rem;
+          display: flex;
+          transition: all .3s ease-in-out;
+          box-shadow: 0 0 1rem rgba(darken($backColor, 10), 0.3);
+
+          a {
+            justify-content: center;
+          }
+        }
+
+        a {
+          width: 8rem;
+        }
+      }
+
+      &.active {
+        transition: all .3s ease-in-out;
+        width: 10rem;
+        box-shadow: 1px 1rem 1rem rgba(darken($backColor, 10), 0.7);
+
+        ul>li {
+          width: 100%;
+
+          &.toggle-btn {
+            width: calc(100% + 2rem);
+
+            a {
+              justify-content: flex-end;
+              padding-right: 1rem;
+            }
+
+          }
+        }
+      }
+
+      ul {
+        padding: 2rem 1rem;
       }
     }
   }
