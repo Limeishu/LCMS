@@ -6,6 +6,10 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
+
+      @media screen and (max-width: 575px) {
+        padding: 1rem;
+      }
     }
 
     width: calc(25% - 4px);
@@ -13,6 +17,18 @@
     margin-bottom: 4px;
     box-sizing: border-box;
     border: 1px solid $tone;
+
+    @media screen and (max-width: 1200px) {
+      width: calc(33.33% - 4px);
+    }
+
+    @media screen and (max-width: 900px) {
+      width: calc(50% - 4px);
+    }
+
+    @media screen and (max-width: 575px) {
+      width: 100%;
+    }
 
     img {
       width: 100%;

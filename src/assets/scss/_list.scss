@@ -6,6 +6,10 @@
     position: relative;
     color: $fontColor;
 
+    @media screen and (max-width: 575px) {
+      padding: 1rem;
+    }
+
     &.file .list {
       grid-template-columns: 1fr 15rem 8rem;
     }

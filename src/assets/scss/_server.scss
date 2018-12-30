@@ -2,6 +2,10 @@
   .server-container {
     padding: 2rem 2rem 2rem 1rem;
 
+    @media screen and (max-width: 575px) {
+      margin: 1rem;
+    }
+
     h2 {
       margin-bottom: 1rem;
     }
@@ -57,7 +61,7 @@
               line-height: 40pt;
               font-size: 10pt;
             }
-          }         
+          }
         }
       }
 
@@ -76,11 +80,11 @@
           margin-bottom: 5pt;
           color: $fontColor;
         }
-  
+
         p {
           color: $tone;
           font-size: 10pt;
-  
+
           span {
             margin-left: 1rem;
           }

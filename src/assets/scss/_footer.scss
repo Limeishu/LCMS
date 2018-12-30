@@ -5,6 +5,9 @@
     width: 10rem;
     position: fixed;
     color: $fontColor;
+    @media screen and (max-width: 575px) {
+      display: none;
+    }
 
     .copyright {
       display: flex;
