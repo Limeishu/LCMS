@@ -32,7 +32,7 @@ const state = {
         label: ['檔案庫'],
         link: 'File.vue',
         icon: ['fas', 'database'],
-        permission: 1
+        permission: 0
       },
       components: lazyLoader('File')
     },
@@ -54,7 +54,7 @@ const state = {
         label: ['待辦事項'],
         link: 'Todos.vue',
         icon: ['fas', 'calendar-check'],
-        permission: 1
+        permission: 2
       },
       components: lazyLoader('Todos')
     },
