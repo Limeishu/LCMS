@@ -28,7 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.4.2",
     "@fortawesome/vue-fontawesome": "^0.0.22",
     "autoprefixer": "^7.1.2",
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
